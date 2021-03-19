@@ -11,6 +11,13 @@
 include_once '/usr/share/php/EaseCore/Atom.php';
 include_once '/usr/share/php/EaseCore/Shared.php';
 include_once '/usr/share/php/EaseCore/Functions.php';
+include_once '/usr/share/php/EaseCore/Molecule.php';
+include_once '/usr/share/php/EaseCore/Logger/Logging.php';
+include_once '/usr/share/php/EaseCore/Sand.php';
+include_once '/usr/share/php/EaseCore/RecordKey.php';
+include_once '/usr/share/php/EaseCore/Brick.php';
+include_once '/usr/share/php/EaseFluentPDO/Orm.php';
+include_once '/usr/share/php/EaseFluentPDO/Engine.php';
 
 $shared = \Ease\Shared::instanced();
 $shared->loadConfig('/etc/debs2sql/.env', true);
