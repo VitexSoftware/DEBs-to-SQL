@@ -3,11 +3,11 @@ db/migrations/*				  usr/lib/debs2sql/db/migrations
 #db/seeds/*				  usr/lib/debs2sql/db/seeds
 debian/conf/composer.json                 usr/lib/debs2sql
 debian/conf/.env                          etc/debs2sql
-phinx-adapter.php			  usr/lib/debs2sql
+debian/phinx-adapter.php	          usr/lib/debs2sql
 src/DebToSQL/*.php                        usr/lib/debs2sql/DebToSQL/
 bin/*					  usr/bin
 #lib/*					  usr/lib/debs2sql
 debs2sql.svg                 	          usr/share/icons/hicolor/scalable/apps/
 #i18n/cs_CZ/LC_MESSAGES/*.mo               usr/share/locale/cs_CZ/LC_MESSAGES/
 #i18n/en_US/LC_MESSAGES/*.mo               usr/share/locale/en_US/LC_MESSAGES/
-io.github.vitexsoftware.debs2sql.metainfo.xml   /usr/share/metainfo/
+io.github.vitexsoftware.debs2sql.metainfo.xml   usr/share/metainfo/

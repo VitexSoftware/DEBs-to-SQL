@@ -13,8 +13,7 @@
   "minimum-stability": "dev",
   "require": {
     "deb/ease-core": "*",
-    "deb/ease-fluentpdo": "*",
-    "robmorgan/phinx": "*"
+    "deb/ease-fluentpdo": "*"
   },
   "require-dev": {},
   "autoload": {
