@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.vitexsoftware.debs2sql</id>
+  
+  <name>Debian Repo to SQL</name>
+  <summary>ndex Debian package repository into SQL database</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      Easy way how to index your Debian repository into SQL database.  All PHP-pdo databases supported.
+    </p>
+  </description>
+  
+  <icon type="stock">debs2sql</icon>
+  
+  <categories>
+    <category>Utility</category>
+    <category>FileTools</category>
+  </categories>
+  
+  <provides>
+    <binary>debs2sql</binary>
+  </provides>
+</component>
+
