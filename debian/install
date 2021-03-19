@@ -4,7 +4,7 @@ db/migrations/*				  usr/lib/debs2sql/db/migrations
 debian/conf/composer.json                 usr/lib/debs2sql
 debian/conf/.env                          etc/debs2sql
 phinx-adapter.php			  usr/lib/debs2sql
-src/DebToSQL/*.php                        usr/lib/debs2sql/AbraFlexi/
+src/DebToSQL/*.php                        usr/lib/debs2sql/DebToSQL/
 bin/*					  usr/bin
 #lib/*					  usr/lib/debs2sql
 #debs2sql.svg                 	          usr/share/icons/hicolor/scalable/apps/
