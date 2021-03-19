@@ -15,7 +15,6 @@
         "vitexsoftware/ease-core": "^1.12",
         "vitexsoftware/ease-fluentpdo": "^1.0"
     },
-
     "require-dev": {
         "robmorgan/phinx": "^0.12.6"
     },
