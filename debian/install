@@ -1,4 +1,4 @@
-src/*.php                                 usr/share/debs2sql
+src/*.php                                 usr/lib/debs2sql
 db/migrations/*				  usr/lib/debs2sql/db/migrations
 #db/seeds/*				  usr/lib/debs2sql/db/seeds
 debian/conf/composer.json                 usr/lib/debs2sql

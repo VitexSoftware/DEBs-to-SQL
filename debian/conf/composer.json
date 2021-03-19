@@ -16,8 +16,7 @@
     "deb/ease-fluentpdo": "*",
     "robmorgan/phinx": "*"
   },
-  "require-dev": {
-  },
+  "require-dev": {},
   "autoload": {
     "psr-4": {
       "DebToSQL\\": "./DebToSQL/"
