@@ -11,6 +11,8 @@ migration:
 seed:
 	cd src ; ../vendor/bin/phinx seed:run -c ../phinx-adapter.php ; cd ..
 
+run:
+	cd src; php -f indexer.php
 
 autoload:
 	composer update
