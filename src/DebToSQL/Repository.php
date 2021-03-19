@@ -150,6 +150,7 @@ class Repository extends \Ease\SQL\Engine {
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Depends');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'PreDepends');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Breaks');
+        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Enhances');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Replaces');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Section');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Priority');
@@ -176,7 +177,7 @@ class Repository extends \Ease\SQL\Engine {
         $filteredKeys = array_keys($dataFiltered);
 
         if (count($originalKeys) != count($filteredKeys)) {
-            $this->addStatusMessage('Unknown column' . implode(',', array_diff($originalKeys, $filteredKeys)), 'warning');
+            $this->addStatusMessage('Unknown column: ' . implode(',', array_diff($originalKeys, $filteredKeys)), 'warning');
         }
 
         return $dataFiltered;
