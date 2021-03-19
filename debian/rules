@@ -14,7 +14,7 @@
 override_dh_install:
 	dh_install
 	jq '.version = "$(shell dpkg-parsechangelog --show-field Version)"' debian/conf/composer.json | sponge debian/conf/composer.json
-	sed -i -e 's/..\/vendor/\/var\/lib\/debs2sql/g' debian/debs2sql/usr/lib/debs2sql/*.php
+	sed -i -e 's/..\/vendor/\/var\/lib\/debs2sql/g' debian/debs2sql/usr/lib/debs2sql/indexer.php
 	sed -i -e 's/dirname(__DIR__)/"\/etc\/debs2sql\/"/g' debian/debs2sql/usr/lib/debs2sql/*.php
 	sed -i -e 's/.\/vendor/\/var\/lib\/debs2sql/g' debian/debs2sql/usr/lib/debs2sql/phinx-adapter.php
 	sed -i '/prefix =/c\ $$prefix = "\/usr\/lib\/debs2sql\/db\/";' debian/debs2sql/usr/lib/debs2sql/phinx-adapter.php

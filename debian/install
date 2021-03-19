@@ -10,4 +10,3 @@ bin/*					  usr/bin
 #debs2sql.svg                 	          usr/share/icons/hicolor/scalable/apps/
 #i18n/cs_CZ/LC_MESSAGES/*.mo               usr/share/locale/cs_CZ/LC_MESSAGES/
 #i18n/en_US/LC_MESSAGES/*.mo               usr/share/locale/en_US/LC_MESSAGES/
-
