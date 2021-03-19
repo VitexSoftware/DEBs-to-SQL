@@ -116,13 +116,14 @@ class Repository extends \Ease\SQL\Engine {
     }
 
     /**
+     * Filer only knonw fields
      * 
-     * 
-     * @param type $dataRaw
+     * @param array $dataRaw
      * 
      * @return array
      */
     public function onlyKnownColumns($dataRaw) {
+        $dataOriginal = $dataRaw;
         $dataFiltered = [];
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Name');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Package');
@@ -162,6 +163,14 @@ class Repository extends \Ease\SQL\Engine {
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Exists');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'fileMtime');
         \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'created');
+
+        $originalKeys = array_keys($dataOriginal);
+        $filteredKeys = array_keys($dataFiltered);
+
+        if (count($originalKeys) != count($filteredKeys)) {
+            $this->addStatusMessage('Unknown column' . implode(',', array_diff($originalKeys, $filteredKeys)), 'warning');
+        }
+
         return $dataFiltered;
     }
 
@@ -246,7 +255,7 @@ class Repository extends \Ease\SQL\Engine {
                         unset($packageData['Build-Ids']);
 
                         if (array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL(['id'], ['Filename' => $packageData['Filename']]))) {
-                            if ($this->insertToSQL(self::onlyKnownColumns($packageData))) {
+                            if ($this->insertToSQL($this->onlyKnownColumns($packageData))) {
                                 $saved[] = $packageData['Name'];
                             }
                         }
