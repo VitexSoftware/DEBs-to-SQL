@@ -14,7 +14,6 @@ if (file_exists('../.env')) {
 }
 
 define('APP_NAME', 'debs2sql');
-define('EASE_LOGGER', 'syslog|console');
 
 $repositor = new \DebToSQL\Repository();
 
