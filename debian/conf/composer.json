@@ -1,40 +1,39 @@
 {
-    "name": "vitexsoftware/debs2sql",
-    "description": "Tool used to setup AbraFlexi multiinstance",
-    "version": "0.1",
-    "type": "project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Vítězslav Dvořák",
-            "email": "info@vitexsoftware.cz"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "deb/ease-core": "*",
-        "deb/ease-fluentpdo": "*",
-        "robmorgan/phinx": "^0.12.6"
+  "name": "vitexsoftware/debs2sql",
+  "description": "Tool used to setup AbraFlexi multiinstance",
+  "version": "0.1",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vítězslav Dvořák",
+      "email": "info@vitexsoftware.cz"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "deb/ease-core": "*",
+    "deb/ease-fluentpdo": "*",
+    "robmorgan/phinx": "*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "DebToSQL\\": "./DebToSQL/"
+    }
+  },
+  "config": {
+    "vendor-dir": "/var/lib/debs2sql"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/usr/share/php/EaseCore/"
     },
-    "require-dev": {
-        "robmorgan/phinx": "^0.12.6"
-    },
-    "autoload": {
-        "psr-4": {
-            "DebToSQL\\": "./DebToSQL/"
-        }
-    },
-    "config": {
-        "vendor-dir": "/var/lib/debs2sql"
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/usr/share/php/EaseCore/"
-        },
-        {
-            "type": "path",
-            "url": "/usr/share/php/EaseFluentPDO/"
-        }
-    ]
+    {
+      "type": "path",
+      "url": "/usr/share/php/EaseFluentPDO/"
+    }
+  ]
 }
