@@ -106,9 +106,11 @@ class Repository extends \Ease\SQL\Engine {
             $this->addStatusMessage('Architecture found: ' . $distName . '/' . $suite . ': ' . $arch);
             $this->arch[$distName][$suite][$arch] = $this->dists[$distName] . '/' . $suite . '/' . $arch;
 
-            $this->packages[$distName][$suite][$arch] = $this->readpackages($this->arch[$distName][$suite][$arch] . '/Packages');
-
-            $this->addStatusMessage('Found ' . count($this->packages[$distName][$suite][$arch]) . ' packages in ' . $distName . '/' . $suite . '/' . $arch, 'success');
+            $packages = $this->arch[$distName][$suite][$arch] . '/Packages';
+            if (file_exists($packages)) {
+                $this->packages[$distName][$suite][$arch] = $this->readpackages($packages);
+                $this->addStatusMessage('Found ' . count($this->packages[$distName][$suite][$arch]) . ' packages in ' . $distName . '/' . $suite . '/' . $arch, 'success');
+            }
         }
         return $this->arch[$distName][$suite];
     }
@@ -126,7 +128,7 @@ class Repository extends \Ease\SQL\Engine {
         $position = 0;
         if ($handle) {
             while (($buffer = fgets($handle, 4096)) !== false) {
-                if (!strstr($buffer, ':')) {
+                if (!strstr($buffer, ': ')) {
                     continue;
                 }
                 list( $key, $value) = explode(': ', $buffer);
