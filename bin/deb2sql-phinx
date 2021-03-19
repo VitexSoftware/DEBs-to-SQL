@@ -1,0 +1,3 @@
+#!/bin/bash
+phinx migrate -c /usr/lib/debs2sql/phinx-adapter.php
+

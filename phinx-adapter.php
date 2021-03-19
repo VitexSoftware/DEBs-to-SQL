@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Multi AbraFlexi Setup - Phinx database adapter.
+ * Debian Repository SQL indexer - Phinx database adapter.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  * @copyright  2021 Vitex Software

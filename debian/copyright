@@ -1,0 +1,1321 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: debs-to
+Source: <url://example.com>
+#
+# Please double check copyright with the licensecheck(1) command.
+
+Files:     .env
+           .gitignore
+           Makefile
+           README.md
+           bin/deb2sql
+           composer.json
+           composer.lock
+           nbproject/private/config.properties
+           nbproject/private/private.properties
+           nbproject/project.properties
+           vendor/cakephp/core/README.md
+           vendor/cakephp/core/composer.json
+           vendor/cakephp/database/README.md
+           vendor/cakephp/database/composer.json
+           vendor/cakephp/datasource/README.md
+           vendor/cakephp/datasource/composer.json
+           vendor/cakephp/utility/README.md
+           vendor/cakephp/utility/composer.json
+           vendor/composer/installed.json
+           vendor/fpdo/fluentpdo/.gitignore
+           vendor/fpdo/fluentpdo/.travis.yml
+           vendor/fpdo/fluentpdo/composer.json
+           vendor/fpdo/fluentpdo/composer.lock
+           vendor/fpdo/fluentpdo/readme.md
+           vendor/fpdo/fluentpdo/tests/_resources/fluentdb.sql
+           vendor/pear/console_getopt/.gitignore
+           vendor/pear/console_getopt/.travis.yml
+           vendor/pear/console_getopt/README.rst
+           vendor/pear/console_getopt/composer.json
+           vendor/pear/console_getopt/tests/001-getopt.phpt
+           vendor/pear/console_getopt/tests/bug10557.phpt
+           vendor/pear/console_getopt/tests/bug11068.phpt
+           vendor/pear/console_getopt/tests/bug13140.phpt
+           vendor/pear/mail/.gitignore
+           vendor/pear/mail/.travis.yml
+           vendor/pear/mail/README.rst
+           vendor/pear/mail/composer.json
+           vendor/pear/mail/tests/13659.phpt
+           vendor/pear/mail/tests/9137.phpt
+           vendor/pear/mail/tests/9137_2.phpt
+           vendor/pear/mail/tests/Makefile
+           vendor/pear/mail/tests/bug17178.phpt
+           vendor/pear/mail/tests/bug17317.phpt
+           vendor/pear/mail/tests/rfc822.phpt
+           vendor/pear/mail/tests/smtp_error.phpt
+           vendor/pear/mail_mime/.gitattributes
+           vendor/pear/mail_mime/README
+           vendor/pear/mail_mime/composer.json
+           vendor/pear/pear-core-minimal/README.rst
+           vendor/pear/pear-core-minimal/composer.json
+           vendor/pear/pear_exception/.gitattributes
+           vendor/pear/pear_exception/.gitignore
+           vendor/pear/pear_exception/.travis.yml
+           vendor/pear/pear_exception/composer.json
+           vendor/psr/container/.gitignore
+           vendor/psr/container/README.md
+           vendor/psr/container/composer.json
+           vendor/psr/log/.gitattributes
+           vendor/psr/log/.gitignore
+           vendor/psr/log/README.md
+           vendor/psr/log/composer.json
+           vendor/psr/simple-cache/.editorconfig
+           vendor/psr/simple-cache/.gitattributes
+           vendor/psr/simple-cache/.gitignore
+           vendor/psr/simple-cache/README.md
+           vendor/psr/simple-cache/composer.json
+           vendor/robmorgan/phinx/.stickler.yml
+           vendor/robmorgan/phinx/bin/phinx.bat
+           vendor/robmorgan/phinx/composer.json
+           vendor/robmorgan/phinx/data/phinx.json.dist
+           vendor/robmorgan/phinx/data/phinx.yml.dist
+           vendor/robmorgan/phinx/docs/config/__init__.py
+           vendor/robmorgan/phinx/docs/config/all.py
+           vendor/robmorgan/phinx/docs/en/commands.rst
+           vendor/robmorgan/phinx/docs/en/conf.py
+           vendor/robmorgan/phinx/docs/en/configuration.rst
+           vendor/robmorgan/phinx/docs/en/contents.rst
+           vendor/robmorgan/phinx/docs/en/goals.rst
+           vendor/robmorgan/phinx/docs/en/index.rst
+           vendor/robmorgan/phinx/docs/en/install.rst
+           vendor/robmorgan/phinx/docs/en/intro.rst
+           vendor/robmorgan/phinx/docs/en/migrations.rst
+           vendor/robmorgan/phinx/docs/en/namespaces.rst
+           vendor/robmorgan/phinx/docs/en/seeding.rst
+           vendor/robmorgan/phinx/docs/es/commands.rst
+           vendor/robmorgan/phinx/docs/es/conf.py
+           vendor/robmorgan/phinx/docs/es/contents.rst
+           vendor/robmorgan/phinx/docs/fr/commands.rst
+           vendor/robmorgan/phinx/docs/fr/conf.py
+           vendor/robmorgan/phinx/docs/fr/configuration.rst
+           vendor/robmorgan/phinx/docs/fr/contents.rst
+           vendor/robmorgan/phinx/docs/fr/index.rst
+           vendor/robmorgan/phinx/docs/fr/migrations.rst
+           vendor/robmorgan/phinx/docs/fr/seeding.rst
+           vendor/robmorgan/phinx/docs/ja/commands.rst
+           vendor/robmorgan/phinx/docs/ja/conf.py
+           vendor/robmorgan/phinx/docs/ja/configuration.rst
+           vendor/robmorgan/phinx/docs/ja/contents.rst
+           vendor/robmorgan/phinx/docs/ja/index.rst
+           vendor/robmorgan/phinx/docs/ja/migrations.rst
+           vendor/robmorgan/phinx/docs/ja/seeding.rst
+           vendor/symfony/config/.gitattributes
+           vendor/symfony/config/.gitignore
+           vendor/symfony/config/CHANGELOG.md
+           vendor/symfony/config/README.md
+           vendor/symfony/config/Tests/Fixtures/Again/foo.xml
+           vendor/symfony/config/Tests/Fixtures/Exclude/AnExcludedFile.txt
+           vendor/symfony/config/Tests/Fixtures/Exclude/ExcludeToo/AnotheExcludedFile.txt
+           vendor/symfony/config/Tests/Fixtures/Include/ExcludeFile.txt
+           vendor/symfony/config/Tests/Fixtures/Include/IncludeAnotherFile.txt
+           vendor/symfony/config/Tests/Fixtures/Include/IncludeFile.txt
+           vendor/symfony/config/Tests/Fixtures/Resource/.hiddenFile
+           vendor/symfony/config/Tests/Fixtures/Util/not_readable.xml
+           vendor/symfony/config/Tests/Fixtures/foo.xml
+           vendor/symfony/config/composer.json
+           vendor/symfony/console/.gitattributes
+           vendor/symfony/console/.gitignore
+           vendor/symfony/console/CHANGELOG.md
+           vendor/symfony/console/README.md
+           vendor/symfony/console/Resources/bin/hiddeninput.exe
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/interactive_output_1.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_0.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_1.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_10.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_11.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_12.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_13.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_14.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_15.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_16.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_17.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_18.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_19.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_2.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_20.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_3.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_4.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_4_with_iterators.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_5.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_6.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_7.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_8.txt
+           vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_9.txt
+           vendor/symfony/console/Tests/Fixtures/application_1.json
+           vendor/symfony/console/Tests/Fixtures/application_1.md
+           vendor/symfony/console/Tests/Fixtures/application_1.txt
+           vendor/symfony/console/Tests/Fixtures/application_2.json
+           vendor/symfony/console/Tests/Fixtures/application_2.md
+           vendor/symfony/console/Tests/Fixtures/application_2.txt
+           vendor/symfony/console/Tests/Fixtures/application_filtered_namespace.txt
+           vendor/symfony/console/Tests/Fixtures/application_gethelp.txt
+           vendor/symfony/console/Tests/Fixtures/application_mbstring.md
+           vendor/symfony/console/Tests/Fixtures/application_mbstring.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception1.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception2.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception3.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception3decorated.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception4.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth1.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth1decorated.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth2.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception_escapeslines.txt
+           vendor/symfony/console/Tests/Fixtures/application_renderexception_linebreaks.txt
+           vendor/symfony/console/Tests/Fixtures/application_run1.txt
+           vendor/symfony/console/Tests/Fixtures/application_run2.txt
+           vendor/symfony/console/Tests/Fixtures/application_run3.txt
+           vendor/symfony/console/Tests/Fixtures/application_run4.txt
+           vendor/symfony/console/Tests/Fixtures/application_run5.txt
+           vendor/symfony/console/Tests/Fixtures/command_1.json
+           vendor/symfony/console/Tests/Fixtures/command_1.md
+           vendor/symfony/console/Tests/Fixtures/command_2.json
+           vendor/symfony/console/Tests/Fixtures/command_2.md
+           vendor/symfony/console/Tests/Fixtures/command_mbstring.md
+           vendor/symfony/console/Tests/Fixtures/input_argument_1.json
+           vendor/symfony/console/Tests/Fixtures/input_argument_1.md
+           vendor/symfony/console/Tests/Fixtures/input_argument_1.txt
+           vendor/symfony/console/Tests/Fixtures/input_argument_2.json
+           vendor/symfony/console/Tests/Fixtures/input_argument_2.md
+           vendor/symfony/console/Tests/Fixtures/input_argument_2.txt
+           vendor/symfony/console/Tests/Fixtures/input_argument_3.json
+           vendor/symfony/console/Tests/Fixtures/input_argument_3.md
+           vendor/symfony/console/Tests/Fixtures/input_argument_3.txt
+           vendor/symfony/console/Tests/Fixtures/input_argument_4.json
+           vendor/symfony/console/Tests/Fixtures/input_argument_4.md
+           vendor/symfony/console/Tests/Fixtures/input_argument_4.txt
+           vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.json
+           vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.md
+           vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.txt
+           vendor/symfony/console/Tests/Fixtures/input_argument_with_style.json
+           vendor/symfony/console/Tests/Fixtures/input_argument_with_style.md
+           vendor/symfony/console/Tests/Fixtures/input_argument_with_style.txt
+           vendor/symfony/console/Tests/Fixtures/input_definition_1.json
+           vendor/symfony/console/Tests/Fixtures/input_definition_1.md
+           vendor/symfony/console/Tests/Fixtures/input_definition_1.txt
+           vendor/symfony/console/Tests/Fixtures/input_definition_2.json
+           vendor/symfony/console/Tests/Fixtures/input_definition_2.md
+           vendor/symfony/console/Tests/Fixtures/input_definition_3.json
+           vendor/symfony/console/Tests/Fixtures/input_definition_3.md
+           vendor/symfony/console/Tests/Fixtures/input_definition_4.json
+           vendor/symfony/console/Tests/Fixtures/input_definition_4.md
+           vendor/symfony/console/Tests/Fixtures/input_option_1.json
+           vendor/symfony/console/Tests/Fixtures/input_option_1.md
+           vendor/symfony/console/Tests/Fixtures/input_option_1.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_2.json
+           vendor/symfony/console/Tests/Fixtures/input_option_2.md
+           vendor/symfony/console/Tests/Fixtures/input_option_2.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_3.json
+           vendor/symfony/console/Tests/Fixtures/input_option_3.md
+           vendor/symfony/console/Tests/Fixtures/input_option_3.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_4.json
+           vendor/symfony/console/Tests/Fixtures/input_option_4.md
+           vendor/symfony/console/Tests/Fixtures/input_option_4.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_5.json
+           vendor/symfony/console/Tests/Fixtures/input_option_5.md
+           vendor/symfony/console/Tests/Fixtures/input_option_5.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_6.json
+           vendor/symfony/console/Tests/Fixtures/input_option_6.md
+           vendor/symfony/console/Tests/Fixtures/input_option_6.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.json
+           vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.md
+           vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_with_style.json
+           vendor/symfony/console/Tests/Fixtures/input_option_with_style.md
+           vendor/symfony/console/Tests/Fixtures/input_option_with_style.txt
+           vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.json
+           vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.md
+           vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.txt
+           vendor/symfony/console/Tests/Fixtures/stream_output_file.txt
+           vendor/symfony/console/Tests/phpt/single_application/arg.phpt
+           vendor/symfony/console/Tests/phpt/single_application/default.phpt
+           vendor/symfony/console/Tests/phpt/single_application/help_name.phpt
+           vendor/symfony/console/Tests/phpt/single_application/version_default_name.phpt
+           vendor/symfony/console/Tests/phpt/single_application/version_name.phpt
+           vendor/symfony/console/Tests/phpt/uses_stdin_as_interactive_input.phpt
+           vendor/symfony/console/composer.json
+           vendor/symfony/deprecation-contracts/.gitignore
+           vendor/symfony/deprecation-contracts/CHANGELOG.md
+           vendor/symfony/deprecation-contracts/README.md
+           vendor/symfony/deprecation-contracts/composer.json
+           vendor/symfony/filesystem/.gitattributes
+           vendor/symfony/filesystem/.gitignore
+           vendor/symfony/filesystem/CHANGELOG.md
+           vendor/symfony/filesystem/README.md
+           vendor/symfony/filesystem/composer.json
+           vendor/symfony/polyfill-ctype/README.md
+           vendor/symfony/polyfill-ctype/composer.json
+           vendor/symfony/polyfill-intl-grapheme/README.md
+           vendor/symfony/polyfill-intl-grapheme/composer.json
+           vendor/symfony/polyfill-intl-normalizer/README.md
+           vendor/symfony/polyfill-intl-normalizer/composer.json
+           vendor/symfony/polyfill-mbstring/README.md
+           vendor/symfony/polyfill-mbstring/composer.json
+           vendor/symfony/polyfill-php73/README.md
+           vendor/symfony/polyfill-php73/composer.json
+           vendor/symfony/polyfill-php80/README.md
+           vendor/symfony/polyfill-php80/composer.json
+           vendor/symfony/service-contracts/.gitignore
+           vendor/symfony/service-contracts/CHANGELOG.md
+           vendor/symfony/service-contracts/README.md
+           vendor/symfony/service-contracts/composer.json
+           vendor/symfony/string/.gitattributes
+           vendor/symfony/string/.gitignore
+           vendor/symfony/string/CHANGELOG.md
+           vendor/symfony/string/README.md
+           vendor/symfony/string/composer.json
+           vendor/vitexsoftware/ease-core/.github/FUNDING.yml
+           vendor/vitexsoftware/ease-core/.github/dependabot.yml
+           vendor/vitexsoftware/ease-core/.github/workflows/packaging.yml
+           vendor/vitexsoftware/ease-core/.github/workflows/testing.yml
+           vendor/vitexsoftware/ease-core/Examples/SendTestMail.php
+           vendor/vitexsoftware/ease-core/Examples/debian/composer.json
+           vendor/vitexsoftware/ease-core/Examples/debian/debianized.php
+           vendor/vitexsoftware/ease-core/Makefile
+           vendor/vitexsoftware/ease-core/README.md
+           vendor/vitexsoftware/ease-core/Vagrantfile
+           vendor/vitexsoftware/ease-core/bootstrap-centos.sh
+           vendor/vitexsoftware/ease-core/codeception.yml
+           vendor/vitexsoftware/ease-core/composer.json
+           vendor/vitexsoftware/ease-core/debian/README.Debian
+           vendor/vitexsoftware/ease-core/debian/compat
+           vendor/vitexsoftware/ease-core/debian/composer.json
+           vendor/vitexsoftware/ease-core/debian/ease-mailer-test
+           vendor/vitexsoftware/ease-core/debian/fixversion.sh
+           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-dev.install
+           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-dev.postinst
+           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-doc.conf
+           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-doc.install
+           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core.install
+           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core.postinst
+           vendor/vitexsoftware/ease-core/debian/rules
+           vendor/vitexsoftware/ease-core/debian/source/format
+           vendor/vitexsoftware/ease-core/ease-core-social-preview.png
+           vendor/vitexsoftware/ease-core/ease-core.dsc
+           vendor/vitexsoftware/ease-core/i18n/cs_CZ/LC_MESSAGES/ease-framework.mo
+           vendor/vitexsoftware/ease-core/i18n/cs_CZ/LC_MESSAGES/ease-framework.po
+           vendor/vitexsoftware/ease-core/i18n/en_US/LC_MESSAGES/ease-framework.mo
+           vendor/vitexsoftware/ease-core/i18n/en_US/LC_MESSAGES/ease-framework.po
+           vendor/vitexsoftware/ease-core/i18n/eo/LC_MESSAGES/ease-framework.mo
+           vendor/vitexsoftware/ease-core/i18n/eo/LC_MESSAGES/ease-framework.po
+           vendor/vitexsoftware/ease-core/project-logo.png
+           vendor/vitexsoftware/ease-core/project-logo.xcf
+           vendor/vitexsoftware/ease-core/release.sh
+           vendor/vitexsoftware/ease-core/social-preview.xcf
+           vendor/vitexsoftware/ease-core/tests/.env
+           vendor/vitexsoftware/ease-core/tests/configtest.json
+           vendor/vitexsoftware/ease-core/tests/report.sh
+           vendor/vitexsoftware/ease-core/tests/runalltests.sh
+           vendor/vitexsoftware/ease-core/tests/unit.suite.yml
+           vendor/vitexsoftware/ease-fluentpdo/.gitignore
+           vendor/vitexsoftware/ease-fluentpdo/Examples/.env
+           vendor/vitexsoftware/ease-fluentpdo/Makefile
+           vendor/vitexsoftware/ease-fluentpdo/README.md
+           vendor/vitexsoftware/ease-fluentpdo/composer.json
+           vendor/vitexsoftware/ease-fluentpdo/debian/compat
+           vendor/vitexsoftware/ease-fluentpdo/debian/composer.json
+           vendor/vitexsoftware/ease-fluentpdo/debian/files
+           vendor/vitexsoftware/ease-fluentpdo/debian/php-ease-fluentpdo.install
+           vendor/vitexsoftware/ease-fluentpdo/debian/php-ease-fluentpdo.postinst
+           vendor/vitexsoftware/ease-fluentpdo/debian/rules
+           vendor/vitexsoftware/ease-fluentpdo/debian/source/format
+           vendor/vitexsoftware/ease-fluentpdo/nbproject/configs/Prepare_Tests.properties
+           vendor/vitexsoftware/ease-fluentpdo/nbproject/project.properties
+           vendor/vitexsoftware/ease-fluentpdo/tests/test.sqlite
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     vendor/cakephp/core/LICENSE.txt
+           vendor/cakephp/database/LICENSE.txt
+           vendor/cakephp/datasource/LICENSE.txt
+           vendor/cakephp/utility/LICENSE.txt
+           vendor/robmorgan/phinx/README.md
+           vendor/robmorgan/phinx/docs/en/copyright.rst
+Copyright: 2005-2019 Cake Software Foundation, Inc. (https://cakefoundation.org)
+           2012-2017 Rob Morgan
+License:   Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+Files:     vendor/vitexsoftware/ease-core/debian/copyright
+Copyright: 2013-2020 Vítězslav Dvořák (v.s.cz) License: MIT
+License:   __UNKNOWN__
+ License: MIT
+ On Debian systems the full text of the GNU General Public License can be found
+ in the `/usr/share/common-licenses/MIT' file.
+
+Files:     vendor/vitexsoftware/ease-core/Dockerfile
+Copyright: __NO_COPYRIGHT__ in: vendor/vitexsoftware/ease-core/Dockerfile
+License:   __UNKNOWN__
+ COPY src/ /usr/share/php/Ease
+ COPY debian/composer.json /usr/share/php/Ease/composer.json
+ COPY docs/  /usr/share/doc/ease-core/html
+
+Files:     vendor/psr/simple-cache/LICENSE.md
+Copyright: 2016 PHP Framework Interoperability Group
+License:   __UNKNOWN__
+ > Permission is hereby granted, free of charge, to any person obtaining a copy
+ > of this software and associated documentation files (the "Software"), to deal
+ > in the Software without restriction, including without limitation the rights
+ > to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ > copies of the Software, and to permit persons to whom the Software is
+ > furnished to do so, subject to the following conditions:
+ >
+ > The above copyright notice and this permission notice shall be included in
+ > all copies or substantial portions of the Software.
+ >
+ > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ > IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ > FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ > AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ > LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ > THE SOFTWARE.
+
+Files:     vendor/vitexsoftware/ease-core/ease-core.spec
+Copyright: 2018 Vítězslav Dvořák <info@vitexsoftware.cz>
+License:   __UNKNOWN__
+ Please preserve changelog entries
+
+Files:     vendor/vitexsoftware/ease-fluentpdo/debian/control
+Copyright: __NO_COPYRIGHT__ in: vendor/vitexsoftware/ease-fluentpdo/debian/control
+License:   __UNKNOWN__
+ Package: php-vitexsofware-ease-fluentpdo
+ Depends: ${misc:Depends},php-ease-core,php-pdo-mysql|php-pdo-pgsql|php-pdo-sqlite|php-pdo-sqlserver
+ Architecture: all
+ Conflicts: ease-framework
+ Replaces: php-ease-fluentpdo
+ Section: web
+ Priority: optional
+ Description: Database support for EasePHP Framework
+ FluentPDO adapter for ease framework with ORM and Enginge classes
+
+Files:     vendor/vitexsoftware/ease-core/debian/control
+Copyright: __NO_COPYRIGHT__ in: vendor/vitexsoftware/ease-core/debian/control
+License:   __UNKNOWN__
+ Package: php-vitexsoftware-ease-core
+ Depends: ${misc:Depends}, php-mail, php-mail-mime, composer-global-update
+ Conflicts: ease-framework
+ Architecture: all
+ Suggests: php-vitexsoftware-ease-html, php-vitexsoftware-ease-bootstrap, php-vitexsoftware-ease-bootstrap4
+ Section: web
+ Priority: optional
+ Description: EasePHP Framework Core
+ common classes for Ease Framework.
+ .
+ Package: php-vitexsoftware-ease-core-dev
+ Depends: ${misc:Depends}, php-mail, php-mail-mime, php-vitexsoftware-ease-core, default-mta
+ Architecture: all
+ Suggests: php-vitexsoftware-ease-html, php-vitexsoftware-ease-bootstrap, php-vitexsoftware-ease-bootstrap4
+ Section: web
+ Priority: optional
+ Description: EasePHP Framework Unit Tests
+ Ease Framework Core unit Test classes.
+ .
+ Package: php-vitexsoftware-ease-core-doc
+ Depends: ${misc:Depends}
+ Architecture: all
+ Suggests: www-browser
+ Section: doc
+ Priority: optional
+ Description: EasePHP Framework Documentation
+ Ease Framework core documentation generate phpDocumentor
+
+Files:     vendor/robmorgan/phinx/bin/phinx
+Copyright: 2014 Rob Morgan
+License:   __UNKNOWN__
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated * documentation files (the "Software"), to
+ deal in the Software without restriction, including without limitation the
+ rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ IN THE SOFTWARE.
+
+#----------------------------------------------------------------------------
+# xml and html files (skipped):
+#         phinx-adapter.php
+#         src/indexer.php
+#         src/DebToSQL/Repository.php
+#         vendor/autoload.php
+#         vendor/fpdo/fluentpdo/phpunit.xml
+#         vendor/fpdo/fluentpdo/src/Structure.php
+#         vendor/fpdo/fluentpdo/src/Utilities.php
+#         vendor/fpdo/fluentpdo/src/Regex.php
+#         vendor/fpdo/fluentpdo/src/Literal.php
+#         vendor/fpdo/fluentpdo/src/Query.php
+#         vendor/fpdo/fluentpdo/src/Exception.php
+#         vendor/fpdo/fluentpdo/src/Queries/Json.php
+#         vendor/fpdo/fluentpdo/src/Queries/Update.php
+#         vendor/fpdo/fluentpdo/src/Queries/Common.php
+#         vendor/fpdo/fluentpdo/src/Queries/Base.php
+#         vendor/fpdo/fluentpdo/src/Queries/Select.php
+#         vendor/fpdo/fluentpdo/src/Queries/Delete.php
+#         vendor/fpdo/fluentpdo/src/Queries/Insert.php
+#         vendor/fpdo/fluentpdo/tests/UtilitiesTest.php
+#         vendor/fpdo/fluentpdo/tests/RegexTest.php
+#         vendor/fpdo/fluentpdo/tests/StructureTest.php
+#         vendor/fpdo/fluentpdo/tests/_resources/init.php
+#         vendor/fpdo/fluentpdo/tests/Queries/UpdateTest.php
+#         vendor/fpdo/fluentpdo/tests/Queries/CommonTest.php
+#         vendor/fpdo/fluentpdo/tests/Queries/InsertTest.php
+#         vendor/fpdo/fluentpdo/tests/Queries/DeleteTest.php
+#         vendor/fpdo/fluentpdo/tests/Queries/SelectTest.php
+#         vendor/composer/autoload_static.php
+#         vendor/composer/InstalledVersions.php
+#         vendor/composer/include_paths.php
+#         vendor/composer/platform_check.php
+#         vendor/composer/autoload_classmap.php
+#         vendor/composer/autoload_namespaces.php
+#         vendor/composer/autoload_files.php
+#         vendor/composer/autoload_psr4.php
+#         vendor/composer/autoload_real.php
+#         vendor/composer/ClassLoader.php
+#         vendor/composer/installed.php
+#         vendor/cakephp/utility/Security.php
+#         vendor/cakephp/utility/Hash.php
+#         vendor/cakephp/utility/Inflector.php
+#         vendor/cakephp/utility/bootstrap.php
+#         vendor/cakephp/utility/MergeVariablesTrait.php
+#         vendor/cakephp/utility/Text.php
+#         vendor/cakephp/utility/Xml.php
+#         vendor/cakephp/utility/CookieCryptTrait.php
+#         vendor/cakephp/utility/Crypto/OpenSsl.php
+#         vendor/cakephp/utility/Exception/XmlException.php
+#         vendor/cakephp/core/HttpApplicationInterface.php
+#         vendor/cakephp/core/App.php
+#         vendor/cakephp/core/Plugin.php
+#         vendor/cakephp/core/PluginCollection.php
+#         vendor/cakephp/core/InstanceConfigTrait.php
+#         vendor/cakephp/core/PluginApplicationInterface.php
+#         vendor/cakephp/core/BasePlugin.php
+#         vendor/cakephp/core/functions.php
+#         vendor/cakephp/core/ObjectRegistry.php
+#         vendor/cakephp/core/PluginInterface.php
+#         vendor/cakephp/core/Configure.php
+#         vendor/cakephp/core/ClassLoader.php
+#         vendor/cakephp/core/ConsoleApplicationInterface.php
+#         vendor/cakephp/core/ConventionsTrait.php
+#         vendor/cakephp/core/StaticConfigTrait.php
+#         vendor/cakephp/core/Retry/CommandRetry.php
+#         vendor/cakephp/core/Retry/RetryStrategyInterface.php
+#         vendor/cakephp/core/Configure/ConfigEngineInterface.php
+#         vendor/cakephp/core/Configure/FileConfigTrait.php
+#         vendor/cakephp/core/Configure/Engine/JsonConfig.php
+#         vendor/cakephp/core/Configure/Engine/PhpConfig.php
+#         vendor/cakephp/core/Configure/Engine/IniConfig.php
+#         vendor/cakephp/core/Exception/MissingPluginException.php
+#         vendor/cakephp/core/Exception/Exception.php
+#         vendor/cakephp/datasource/FactoryLocator.php
+#         vendor/cakephp/datasource/EntityInterface.php
+#         vendor/cakephp/datasource/PaginatorInterface.php
+#         vendor/cakephp/datasource/SimplePaginator.php
+#         vendor/cakephp/datasource/QueryTrait.php
+#         vendor/cakephp/datasource/RepositoryInterface.php
+#         vendor/cakephp/datasource/EntityTrait.php
+#         vendor/cakephp/datasource/Paginator.php
+#         vendor/cakephp/datasource/InvalidPropertyInterface.php
+#         vendor/cakephp/datasource/ConnectionManager.php
+#         vendor/cakephp/datasource/RulesAwareTrait.php
+#         vendor/cakephp/datasource/SchemaInterface.php
+#         vendor/cakephp/datasource/ResultSetDecorator.php
+#         vendor/cakephp/datasource/QueryInterface.php
+#         vendor/cakephp/datasource/ModelAwareTrait.php
+#         vendor/cakephp/datasource/RulesChecker.php
+#         vendor/cakephp/datasource/ResultSetInterface.php
+#         vendor/cakephp/datasource/RuleInvoker.php
+#         vendor/cakephp/datasource/ConnectionInterface.php
+#         vendor/cakephp/datasource/QueryCacher.php
+#         vendor/cakephp/datasource/FixtureInterface.php
+#         vendor/cakephp/datasource/ConnectionRegistry.php
+#         vendor/cakephp/datasource/Exception/RecordNotFoundException.php
+#         vendor/cakephp/datasource/Exception/InvalidPrimaryKeyException.php
+#         vendor/cakephp/datasource/Exception/MissingModelException.php
+#         vendor/cakephp/datasource/Exception/MissingDatasourceConfigException.php
+#         vendor/cakephp/datasource/Exception/PageOutOfBoundsException.php
+#         vendor/cakephp/datasource/Exception/MissingDatasourceException.php
+#         vendor/cakephp/database/QueryCompiler.php
+#         vendor/cakephp/database/TypedResultInterface.php
+#         vendor/cakephp/database/SqlserverCompiler.php
+#         vendor/cakephp/database/TypeMapTrait.php
+#         vendor/cakephp/database/SqliteCompiler.php
+#         vendor/cakephp/database/TypeMap.php
+#         vendor/cakephp/database/Driver.php
+#         vendor/cakephp/database/SchemaCache.php
+#         vendor/cakephp/database/FieldTypeConverter.php
+#         vendor/cakephp/database/SqlDialectTrait.php
+#         vendor/cakephp/database/DriverInterface.php
+#         vendor/cakephp/database/ConstraintsInterface.php
+#         vendor/cakephp/database/FunctionsBuilder.php
+#         vendor/cakephp/database/ValueBinder.php
+#         vendor/cakephp/database/TypeConverterTrait.php
+#         vendor/cakephp/database/Type.php
+#         vendor/cakephp/database/StatementInterface.php
+#         vendor/cakephp/database/TypeInterface.php
+#         vendor/cakephp/database/IdentifierQuoter.php
+#         vendor/cakephp/database/TypedResultTrait.php
+#         vendor/cakephp/database/ExpressionInterface.php
+#         vendor/cakephp/database/TypeFactory.php
+#         vendor/cakephp/database/Connection.php
+#         vendor/cakephp/database/Query.php
+#         vendor/cakephp/database/Exception.php
+#         vendor/cakephp/database/Retry/ReconnectStrategy.php
+#         vendor/cakephp/database/Dialect/TupleComparisonTranslatorTrait.php
+#         vendor/cakephp/database/Dialect/SqliteDialectTrait.php
+#         vendor/cakephp/database/Dialect/MysqlDialectTrait.php
+#         vendor/cakephp/database/Dialect/PostgresDialectTrait.php
+#         vendor/cakephp/database/Dialect/SqlserverDialectTrait.php
+#         vendor/cakephp/database/Driver/Sqlite.php
+#         vendor/cakephp/database/Driver/Mysql.php
+#         vendor/cakephp/database/Driver/Sqlserver.php
+#         vendor/cakephp/database/Driver/Postgres.php
+#         vendor/cakephp/database/Schema/CollectionInterface.php
+#         vendor/cakephp/database/Schema/MysqlSchema.php
+#         vendor/cakephp/database/Schema/TableSchemaAwareInterface.php
+#         vendor/cakephp/database/Schema/SqlserverSchema.php
+#         vendor/cakephp/database/Schema/TableSchema.php
+#         vendor/cakephp/database/Schema/SqliteSchema.php
+#         vendor/cakephp/database/Schema/Collection.php
+#         vendor/cakephp/database/Schema/PostgresSchema.php
+#         vendor/cakephp/database/Schema/CachedCollection.php
+#         vendor/cakephp/database/Schema/BaseSchema.php
+#         vendor/cakephp/database/Schema/TableSchemaInterface.php
+#         vendor/cakephp/database/Schema/SqlGeneratorInterface.php
+#         vendor/cakephp/database/Expression/FunctionExpression.php
+#         vendor/cakephp/database/Expression/ValuesExpression.php
+#         vendor/cakephp/database/Expression/OrderClauseExpression.php
+#         vendor/cakephp/database/Expression/BetweenExpression.php
+#         vendor/cakephp/database/Expression/IdentifierExpression.php
+#         vendor/cakephp/database/Expression/TupleComparison.php
+#         vendor/cakephp/database/Expression/FieldTrait.php
+#         vendor/cakephp/database/Expression/UnaryExpression.php
+#         vendor/cakephp/database/Expression/CaseExpression.php
+#         vendor/cakephp/database/Expression/QueryExpression.php
+#         vendor/cakephp/database/Expression/Comparison.php
+#         vendor/cakephp/database/Expression/FieldInterface.php
+#         vendor/cakephp/database/Expression/OrderByExpression.php
+#         vendor/cakephp/database/Log/QueryLogger.php
+#         vendor/cakephp/database/Log/LoggingStatement.php
+#         vendor/cakephp/database/Log/LoggedQuery.php
+#         vendor/cakephp/database/Type/TimeType.php
+#         vendor/cakephp/database/Type/DecimalType.php
+#         vendor/cakephp/database/Type/ExpressionTypeCasterTrait.php
+#         vendor/cakephp/database/Type/BaseType.php
+#         vendor/cakephp/database/Type/StringType.php
+#         vendor/cakephp/database/Type/JsonType.php
+#         vendor/cakephp/database/Type/IntegerType.php
+#         vendor/cakephp/database/Type/DateTimeType.php
+#         vendor/cakephp/database/Type/OptionalConvertInterface.php
+#         vendor/cakephp/database/Type/FloatType.php
+#         vendor/cakephp/database/Type/BinaryType.php
+#         vendor/cakephp/database/Type/BoolType.php
+#         vendor/cakephp/database/Type/BatchCastingInterface.php
+#         vendor/cakephp/database/Type/UuidType.php
+#         vendor/cakephp/database/Type/BinaryUuidType.php
+#         vendor/cakephp/database/Type/DateType.php
+#         vendor/cakephp/database/Type/ExpressionTypeInterface.php
+#         vendor/cakephp/database/Type/DateTimeFractionalType.php
+#         vendor/cakephp/database/Exception/MissingExtensionException.php
+#         vendor/cakephp/database/Exception/MissingConnectionException.php
+#         vendor/cakephp/database/Exception/NestedTransactionRollbackException.php
+#         vendor/cakephp/database/Exception/MissingDriverException.php
+#         vendor/cakephp/database/Statement/BufferResultsTrait.php
+#         vendor/cakephp/database/Statement/MysqlStatement.php
+#         vendor/cakephp/database/Statement/PDOStatement.php
+#         vendor/cakephp/database/Statement/SqliteStatement.php
+#         vendor/cakephp/database/Statement/StatementDecorator.php
+#         vendor/cakephp/database/Statement/CallbackStatement.php
+#         vendor/cakephp/database/Statement/BufferedStatement.php
+#         vendor/cakephp/database/Statement/SqlserverStatement.php
+#         vendor/robmorgan/phinx/src/composer_autoloader.php
+#         vendor/robmorgan/phinx/src/Phinx/Config/Config.php
+#         vendor/robmorgan/phinx/src/Phinx/Config/ConfigInterface.php
+#         vendor/robmorgan/phinx/src/Phinx/Config/NamespaceAwareInterface.php
+#         vendor/robmorgan/phinx/src/Phinx/Config/NamespaceAwareTrait.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Table.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/MysqlAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/TimedOutputAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/PdoAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/ProxyAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/UnsupportedColumnTypeException.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/AdapterInterface.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/SQLiteAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/AdapterFactory.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/AdapterWrapper.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/TablePrefixAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/AbstractAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/SqlServerAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/PostgresAdapter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/DirectActionInterface.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Adapter/WrapperInterface.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Plan/AlterTable.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Plan/Plan.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Plan/Intent.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Plan/NewTable.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Plan/Solver/ActionSplitter.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Util/AlterInstructions.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/AddColumn.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/ChangeColumn.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/Action.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/DropTable.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/DropForeignKey.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/RemoveColumn.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/CreateTable.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/RenameColumn.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/AddForeignKey.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/ChangePrimaryKey.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/AddIndex.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/DropIndex.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/ChangeComment.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Action/RenameTable.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Table/Column.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Table/Index.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Table/Table.php
+#         vendor/robmorgan/phinx/src/Phinx/Db/Table/ForeignKey.php
+#         vendor/robmorgan/phinx/src/Phinx/Wrapper/TextWrapper.php
+#         vendor/robmorgan/phinx/src/Phinx/Util/Expression.php
+#         vendor/robmorgan/phinx/src/Phinx/Util/Util.php
+#         vendor/robmorgan/phinx/src/Phinx/Util/Literal.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/PhinxApplication.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/Init.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/Test.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/SeedRun.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/ListAliases.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/AbstractCommand.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/Breakpoint.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/Migrate.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/Create.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/SeedCreate.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/Status.php
+#         vendor/robmorgan/phinx/src/Phinx/Console/Command/Rollback.php
+#         vendor/robmorgan/phinx/src/Phinx/Migration/IrreversibleMigrationException.php
+#         vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php
+#         vendor/robmorgan/phinx/src/Phinx/Migration/AbstractMigration.php
+#         vendor/robmorgan/phinx/src/Phinx/Migration/CreationInterface.php
+#         vendor/robmorgan/phinx/src/Phinx/Migration/AbstractTemplateCreation.php
+#         vendor/robmorgan/phinx/src/Phinx/Migration/Migration.template.php.dist
+#         vendor/robmorgan/phinx/src/Phinx/Migration/MigrationInterface.php
+#         vendor/robmorgan/phinx/src/Phinx/Migration/Manager/Environment.php
+#         vendor/robmorgan/phinx/src/Phinx/Seed/AbstractSeed.php
+#         vendor/robmorgan/phinx/src/Phinx/Seed/Seed.template.php.dist
+#         vendor/robmorgan/phinx/src/Phinx/Seed/SeedInterface.php
+#         vendor/robmorgan/phinx/app/web.php
+#         vendor/robmorgan/phinx/app/phinx.php
+#         vendor/robmorgan/phinx/data/phinx.php.dist
+#         vendor/psr/simple-cache/src/InvalidArgumentException.php
+#         vendor/psr/simple-cache/src/CacheInterface.php
+#         vendor/psr/simple-cache/src/CacheException.php
+#         vendor/psr/log/Psr/Log/LoggerAwareInterface.php
+#         vendor/psr/log/Psr/Log/LogLevel.php
+#         vendor/psr/log/Psr/Log/LoggerAwareTrait.php
+#         vendor/psr/log/Psr/Log/InvalidArgumentException.php
+#         vendor/psr/log/Psr/Log/NullLogger.php
+#         vendor/psr/log/Psr/Log/LoggerTrait.php
+#         vendor/psr/log/Psr/Log/LoggerInterface.php
+#         vendor/psr/log/Psr/Log/AbstractLogger.php
+#         vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
+#         vendor/psr/log/Psr/Log/Test/DummyTest.php
+#         vendor/psr/log/Psr/Log/Test/TestLogger.php
+#         vendor/psr/container/src/NotFoundExceptionInterface.php
+#         vendor/psr/container/src/ContainerExceptionInterface.php
+#         vendor/psr/container/src/ContainerInterface.php
+#         vendor/pear/mail_mime/Mail/mimePart.php
+#         vendor/pear/mail_mime/Mail/mime.php
+#         vendor/pear/console_getopt/package.xml
+#         vendor/pear/console_getopt/Console/Getopt.php
+#         vendor/pear/mail/package.xml
+#         vendor/pear/mail/Mail.php
+#         vendor/pear/mail/Mail/mail.php
+#         vendor/pear/mail/Mail/RFC822.php
+#         vendor/pear/mail/Mail/sendmail.php
+#         vendor/pear/mail/Mail/mock.php
+#         vendor/pear/mail/Mail/smtp.php
+#         vendor/pear/mail/Mail/null.php
+#         vendor/pear/mail/Mail/smtpmx.php
+#         vendor/pear/mail/tests/validateQuotedString.php
+#         vendor/pear/pear-core-minimal/src/PEAR.php
+#         vendor/pear/pear-core-minimal/src/System.php
+#         vendor/pear/pear-core-minimal/src/OS/Guess.php
+#         vendor/pear/pear-core-minimal/src/PEAR/Error.php
+#         vendor/pear/pear-core-minimal/src/PEAR/ErrorStack.php
+#         vendor/pear/pear_exception/package.xml
+#         vendor/pear/pear_exception/tests/PEAR/ExceptionTest.php
+#         vendor/pear/pear_exception/PEAR/Exception.php
+#         vendor/symfony/polyfill-intl-normalizer/bootstrap80.php
+#         vendor/symfony/polyfill-intl-normalizer/bootstrap.php
+#         vendor/symfony/polyfill-intl-normalizer/Normalizer.php
+#         vendor/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php
+#         vendor/symfony/polyfill-intl-normalizer/Resources/unidata/combiningClass.php
+#         vendor/symfony/polyfill-intl-normalizer/Resources/unidata/compatibilityDecomposition.php
+#         vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalDecomposition.php
+#         vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalComposition.php
+#         vendor/symfony/console/Cursor.php
+#         vendor/symfony/console/SingleCommandApplication.php
+#         vendor/symfony/console/ConsoleEvents.php
+#         vendor/symfony/console/phpunit.xml.dist
+#         vendor/symfony/console/Color.php
+#         vendor/symfony/console/Terminal.php
+#         vendor/symfony/console/Application.php
+#         vendor/symfony/console/Tests/ConsoleEventsTest.php
+#         vendor/symfony/console/Tests/TerminalTest.php
+#         vendor/symfony/console/Tests/CursorTest.php
+#         vendor/symfony/console/Tests/ApplicationTest.php
+#         vendor/symfony/console/Tests/ColorTest.php
+#         vendor/symfony/console/Tests/CommandLoader/FactoryCommandLoaderTest.php
+#         vendor/symfony/console/Tests/CommandLoader/ContainerCommandLoaderTest.php
+#         vendor/symfony/console/Tests/Helper/ProgressBarTest.php
+#         vendor/symfony/console/Tests/Helper/QuestionHelperTest.php
+#         vendor/symfony/console/Tests/Helper/ProcessHelperTest.php
+#         vendor/symfony/console/Tests/Helper/FormatterHelperTest.php
+#         vendor/symfony/console/Tests/Helper/TableStyleTest.php
+#         vendor/symfony/console/Tests/Helper/DumperNativeFallbackTest.php
+#         vendor/symfony/console/Tests/Helper/DumperTest.php
+#         vendor/symfony/console/Tests/Helper/AbstractQuestionHelperTest.php
+#         vendor/symfony/console/Tests/Helper/HelperTest.php
+#         vendor/symfony/console/Tests/Helper/HelperSetTest.php
+#         vendor/symfony/console/Tests/Helper/TableCellStyleTest.php
+#         vendor/symfony/console/Tests/Helper/ProgressIndicatorTest.php
+#         vendor/symfony/console/Tests/Helper/SymfonyQuestionHelperTest.php
+#         vendor/symfony/console/Tests/Helper/TableTest.php
+#         vendor/symfony/console/Tests/Command/HelpCommandTest.php
+#         vendor/symfony/console/Tests/Command/LockableTraitTest.php
+#         vendor/symfony/console/Tests/Command/ListCommandTest.php
+#         vendor/symfony/console/Tests/Command/SingleCommandApplicationTest.php
+#         vendor/symfony/console/Tests/Command/CommandTest.php
+#         vendor/symfony/console/Tests/CI/GithubActionReporterTest.php
+#         vendor/symfony/console/Tests/Fixtures/DescriptorCommandMbString.php
+#         vendor/symfony/console/Tests/Fixtures/command_mbstring.txt
+#         vendor/symfony/console/Tests/Fixtures/Foo2Command.php
+#         vendor/symfony/console/Tests/Fixtures/input_option_1.xml
+#         vendor/symfony/console/Tests/Fixtures/FoobarCommand.php
+#         vendor/symfony/console/Tests/Fixtures/input_option_2.xml
+#         vendor/symfony/console/Tests/Fixtures/input_argument_2.xml
+#         vendor/symfony/console/Tests/Fixtures/Foo3Command.php
+#         vendor/symfony/console/Tests/Fixtures/application_1.xml
+#         vendor/symfony/console/Tests/Fixtures/command_2.txt
+#         vendor/symfony/console/Tests/Fixtures/command_2.xml
+#         vendor/symfony/console/Tests/Fixtures/Foo4Command.php
+#         vendor/symfony/console/Tests/Fixtures/DescriptorApplication2.php
+#         vendor/symfony/console/Tests/Fixtures/input_argument_3.xml
+#         vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.xml
+#         vendor/symfony/console/Tests/Fixtures/DummyOutput.php
+#         vendor/symfony/console/Tests/Fixtures/DescriptorCommand2.php
+#         vendor/symfony/console/Tests/Fixtures/input_option_with_style.xml
+#         vendor/symfony/console/Tests/Fixtures/input_option_3.xml
+#         vendor/symfony/console/Tests/Fixtures/FooSameCaseUppercaseCommand.php
+#         vendor/symfony/console/Tests/Fixtures/FooSubnamespaced1Command.php
+#         vendor/symfony/console/Tests/Fixtures/input_argument_4.xml
+#         vendor/symfony/console/Tests/Fixtures/DescriptorCommand4.php
+#         vendor/symfony/console/Tests/Fixtures/application_2.xml
+#         vendor/symfony/console/Tests/Fixtures/input_definition_3.xml
+#         vendor/symfony/console/Tests/Fixtures/Foo6Command.php
+#         vendor/symfony/console/Tests/Fixtures/input_option_4.xml
+#         vendor/symfony/console/Tests/Fixtures/input_definition_4.txt
+#         vendor/symfony/console/Tests/Fixtures/input_option_5.xml
+#         vendor/symfony/console/Tests/Fixtures/input_argument_with_style.xml
+#         vendor/symfony/console/Tests/Fixtures/FooLock2Command.php
+#         vendor/symfony/console/Tests/Fixtures/Foo1Command.php
+#         vendor/symfony/console/Tests/Fixtures/input_definition_2.txt
+#         vendor/symfony/console/Tests/Fixtures/input_definition_4.xml
+#         vendor/symfony/console/Tests/Fixtures/FooLockCommand.php
+#         vendor/symfony/console/Tests/Fixtures/input_option_6.xml
+#         vendor/symfony/console/Tests/Fixtures/command_1.xml
+#         vendor/symfony/console/Tests/Fixtures/DescriptorApplication1.php
+#         vendor/symfony/console/Tests/Fixtures/input_definition_1.xml
+#         vendor/symfony/console/Tests/Fixtures/Foo5Command.php
+#         vendor/symfony/console/Tests/Fixtures/FooHiddenCommand.php
+#         vendor/symfony/console/Tests/Fixtures/BarHiddenCommand.php
+#         vendor/symfony/console/Tests/Fixtures/input_definition_2.xml
+#         vendor/symfony/console/Tests/Fixtures/FooCommand.php
+#         vendor/symfony/console/Tests/Fixtures/DescriptorApplicationMbString.php
+#         vendor/symfony/console/Tests/Fixtures/DescriptorCommand3.php
+#         vendor/symfony/console/Tests/Fixtures/TestAmbiguousCommandRegistering2.php
+#         vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.xml
+#         vendor/symfony/console/Tests/Fixtures/TestCommand.php
+#         vendor/symfony/console/Tests/Fixtures/input_definition_3.txt
+#         vendor/symfony/console/Tests/Fixtures/FooSameCaseLowercaseCommand.php
+#         vendor/symfony/console/Tests/Fixtures/TestAmbiguousCommandRegistering.php
+#         vendor/symfony/console/Tests/Fixtures/FooSubnamespaced2Command.php
+#         vendor/symfony/console/Tests/Fixtures/input_argument_1.xml
+#         vendor/symfony/console/Tests/Fixtures/FooWithoutAliasCommand.php
+#         vendor/symfony/console/Tests/Fixtures/DescriptorCommand1.php
+#         vendor/symfony/console/Tests/Fixtures/BarBucCommand.php
+#         vendor/symfony/console/Tests/Fixtures/command_1.txt
+#         vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.xml
+#         vendor/symfony/console/Tests/Fixtures/FooOptCommand.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_15.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_20.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_13.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_5.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_1.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_3.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_19.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_7.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_4_with_iterators.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_4.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_2.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_6.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_0.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_12.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_17.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_8.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_18.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_16.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_9.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_11.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_14.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/interactive_command_1.php
+#         vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_10.php
+#         vendor/symfony/console/Tests/Logger/ConsoleLoggerTest.php
+#         vendor/symfony/console/Tests/EventListener/ErrorListenerTest.php
+#         vendor/symfony/console/Tests/DependencyInjection/AddConsoleCommandPassTest.php
+#         vendor/symfony/console/Tests/Tester/ApplicationTesterTest.php
+#         vendor/symfony/console/Tests/Tester/CommandTesterTest.php
+#         vendor/symfony/console/Tests/Output/NullOutputTest.php
+#         vendor/symfony/console/Tests/Output/OutputTest.php
+#         vendor/symfony/console/Tests/Output/StreamOutputTest.php
+#         vendor/symfony/console/Tests/Output/ConsoleOutputTest.php
+#         vendor/symfony/console/Tests/Output/ConsoleSectionOutputTest.php
+#         vendor/symfony/console/Tests/Formatter/NullOutputFormatterStyleTest.php
+#         vendor/symfony/console/Tests/Formatter/OutputFormatterTest.php
+#         vendor/symfony/console/Tests/Formatter/OutputFormatterStyleTest.php
+#         vendor/symfony/console/Tests/Formatter/NullOutputFormatterTest.php
+#         vendor/symfony/console/Tests/Formatter/OutputFormatterStyleStackTest.php
+#         vendor/symfony/console/Tests/Style/SymfonyStyleTest.php
+#         vendor/symfony/console/Tests/Input/InputDefinitionTest.php
+#         vendor/symfony/console/Tests/Input/InputArgumentTest.php
+#         vendor/symfony/console/Tests/Input/ArgvInputTest.php
+#         vendor/symfony/console/Tests/Input/StringInputTest.php
+#         vendor/symfony/console/Tests/Input/ArrayInputTest.php
+#         vendor/symfony/console/Tests/Input/InputOptionTest.php
+#         vendor/symfony/console/Tests/Input/InputTest.php
+#         vendor/symfony/console/Tests/Descriptor/XmlDescriptorTest.php
+#         vendor/symfony/console/Tests/Descriptor/TextDescriptorTest.php
+#         vendor/symfony/console/Tests/Descriptor/ApplicationDescriptionTest.php
+#         vendor/symfony/console/Tests/Descriptor/MarkdownDescriptorTest.php
+#         vendor/symfony/console/Tests/Descriptor/ObjectsProvider.php
+#         vendor/symfony/console/Tests/Descriptor/AbstractDescriptorTest.php
+#         vendor/symfony/console/Tests/Descriptor/JsonDescriptorTest.php
+#         vendor/symfony/console/Tests/Question/ChoiceQuestionTest.php
+#         vendor/symfony/console/Tests/Question/QuestionTest.php
+#         vendor/symfony/console/Tests/Question/ConfirmationQuestionTest.php
+#         vendor/symfony/console/Tests/SignalRegistry/SignalRegistryTest.php
+#         vendor/symfony/console/CommandLoader/ContainerCommandLoader.php
+#         vendor/symfony/console/CommandLoader/CommandLoaderInterface.php
+#         vendor/symfony/console/CommandLoader/FactoryCommandLoader.php
+#         vendor/symfony/console/Helper/HelperInterface.php
+#         vendor/symfony/console/Helper/InputAwareHelper.php
+#         vendor/symfony/console/Helper/TableCell.php
+#         vendor/symfony/console/Helper/TableStyle.php
+#         vendor/symfony/console/Helper/ProgressIndicator.php
+#         vendor/symfony/console/Helper/TableRows.php
+#         vendor/symfony/console/Helper/Dumper.php
+#         vendor/symfony/console/Helper/TableSeparator.php
+#         vendor/symfony/console/Helper/ProcessHelper.php
+#         vendor/symfony/console/Helper/TableCellStyle.php
+#         vendor/symfony/console/Helper/ProgressBar.php
+#         vendor/symfony/console/Helper/FormatterHelper.php
+#         vendor/symfony/console/Helper/Table.php
+#         vendor/symfony/console/Helper/DebugFormatterHelper.php
+#         vendor/symfony/console/Helper/SymfonyQuestionHelper.php
+#         vendor/symfony/console/Helper/Helper.php
+#         vendor/symfony/console/Helper/DescriptorHelper.php
+#         vendor/symfony/console/Helper/QuestionHelper.php
+#         vendor/symfony/console/Helper/HelperSet.php
+#         vendor/symfony/console/Command/Command.php
+#         vendor/symfony/console/Command/LockableTrait.php
+#         vendor/symfony/console/Command/ListCommand.php
+#         vendor/symfony/console/Command/LazyCommand.php
+#         vendor/symfony/console/Command/HelpCommand.php
+#         vendor/symfony/console/Command/SignalableCommandInterface.php
+#         vendor/symfony/console/Event/ConsoleEvent.php
+#         vendor/symfony/console/Event/ConsoleCommandEvent.php
+#         vendor/symfony/console/Event/ConsoleSignalEvent.php
+#         vendor/symfony/console/Event/ConsoleTerminateEvent.php
+#         vendor/symfony/console/Event/ConsoleErrorEvent.php
+#         vendor/symfony/console/CI/GithubActionReporter.php
+#         vendor/symfony/console/Logger/ConsoleLogger.php
+#         vendor/symfony/console/EventListener/ErrorListener.php
+#         vendor/symfony/console/DependencyInjection/AddConsoleCommandPass.php
+#         vendor/symfony/console/Tester/TesterTrait.php
+#         vendor/symfony/console/Tester/CommandTester.php
+#         vendor/symfony/console/Tester/ApplicationTester.php
+#         vendor/symfony/console/Output/StreamOutput.php
+#         vendor/symfony/console/Output/BufferedOutput.php
+#         vendor/symfony/console/Output/ConsoleOutput.php
+#         vendor/symfony/console/Output/TrimmedBufferOutput.php
+#         vendor/symfony/console/Output/NullOutput.php
+#         vendor/symfony/console/Output/OutputInterface.php
+#         vendor/symfony/console/Output/Output.php
+#         vendor/symfony/console/Output/ConsoleOutputInterface.php
+#         vendor/symfony/console/Output/ConsoleSectionOutput.php
+#         vendor/symfony/console/Formatter/OutputFormatterInterface.php
+#         vendor/symfony/console/Formatter/OutputFormatter.php
+#         vendor/symfony/console/Formatter/WrappableOutputFormatterInterface.php
+#         vendor/symfony/console/Formatter/OutputFormatterStyleStack.php
+#         vendor/symfony/console/Formatter/NullOutputFormatterStyle.php
+#         vendor/symfony/console/Formatter/NullOutputFormatter.php
+#         vendor/symfony/console/Formatter/OutputFormatterStyleInterface.php
+#         vendor/symfony/console/Formatter/OutputFormatterStyle.php
+#         vendor/symfony/console/Exception/NamespaceNotFoundException.php
+#         vendor/symfony/console/Exception/InvalidOptionException.php
+#         vendor/symfony/console/Exception/LogicException.php
+#         vendor/symfony/console/Exception/InvalidArgumentException.php
+#         vendor/symfony/console/Exception/ExceptionInterface.php
+#         vendor/symfony/console/Exception/MissingInputException.php
+#         vendor/symfony/console/Exception/CommandNotFoundException.php
+#         vendor/symfony/console/Exception/RuntimeException.php
+#         vendor/symfony/console/Attribute/ConsoleCommand.php
+#         vendor/symfony/console/Style/StyleInterface.php
+#         vendor/symfony/console/Style/SymfonyStyle.php
+#         vendor/symfony/console/Style/OutputStyle.php
+#         vendor/symfony/console/Input/InputDefinition.php
+#         vendor/symfony/console/Input/InputOption.php
+#         vendor/symfony/console/Input/ArgvInput.php
+#         vendor/symfony/console/Input/InputAwareInterface.php
+#         vendor/symfony/console/Input/StringInput.php
+#         vendor/symfony/console/Input/StreamableInputInterface.php
+#         vendor/symfony/console/Input/ArrayInput.php
+#         vendor/symfony/console/Input/Input.php
+#         vendor/symfony/console/Input/InputInterface.php
+#         vendor/symfony/console/Input/InputArgument.php
+#         vendor/symfony/console/Descriptor/MarkdownDescriptor.php
+#         vendor/symfony/console/Descriptor/ApplicationDescription.php
+#         vendor/symfony/console/Descriptor/JsonDescriptor.php
+#         vendor/symfony/console/Descriptor/XmlDescriptor.php
+#         vendor/symfony/console/Descriptor/TextDescriptor.php
+#         vendor/symfony/console/Descriptor/DescriptorInterface.php
+#         vendor/symfony/console/Descriptor/Descriptor.php
+#         vendor/symfony/console/Question/Question.php
+#         vendor/symfony/console/Question/ChoiceQuestion.php
+#         vendor/symfony/console/Question/ConfirmationQuestion.php
+#         vendor/symfony/console/SignalRegistry/SignalRegistry.php
+#         vendor/symfony/filesystem/Filesystem.php
+#         vendor/symfony/filesystem/phpunit.xml.dist
+#         vendor/symfony/filesystem/Tests/FilesystemTest.php
+#         vendor/symfony/filesystem/Tests/ExceptionTest.php
+#         vendor/symfony/filesystem/Tests/FilesystemTestCase.php
+#         vendor/symfony/filesystem/Tests/Fixtures/MockStream/MockStream.php
+#         vendor/symfony/filesystem/Exception/IOException.php
+#         vendor/symfony/filesystem/Exception/InvalidArgumentException.php
+#         vendor/symfony/filesystem/Exception/ExceptionInterface.php
+#         vendor/symfony/filesystem/Exception/IOExceptionInterface.php
+#         vendor/symfony/filesystem/Exception/FileNotFoundException.php
+#         vendor/symfony/polyfill-mbstring/bootstrap80.php
+#         vendor/symfony/polyfill-mbstring/bootstrap.php
+#         vendor/symfony/polyfill-mbstring/Mbstring.php
+#         vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
+#         vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+#         vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
+#         vendor/symfony/polyfill-ctype/Ctype.php
+#         vendor/symfony/polyfill-ctype/bootstrap80.php
+#         vendor/symfony/polyfill-ctype/bootstrap.php
+#         vendor/symfony/service-contracts/ServiceSubscriberTrait.php
+#         vendor/symfony/service-contracts/ServiceSubscriberInterface.php
+#         vendor/symfony/service-contracts/ResetInterface.php
+#         vendor/symfony/service-contracts/ServiceProviderInterface.php
+#         vendor/symfony/service-contracts/ServiceLocatorTrait.php
+#         vendor/symfony/service-contracts/Test/ServiceLocatorTest.php
+#         vendor/symfony/service-contracts/Attribute/Required.php
+#         vendor/symfony/polyfill-intl-grapheme/bootstrap80.php
+#         vendor/symfony/polyfill-intl-grapheme/bootstrap.php
+#         vendor/symfony/polyfill-intl-grapheme/Grapheme.php
+#         vendor/symfony/deprecation-contracts/function.php
+#         vendor/symfony/string/ByteString.php
+#         vendor/symfony/string/CodePointString.php
+#         vendor/symfony/string/AbstractString.php
+#         vendor/symfony/string/LazyString.php
+#         vendor/symfony/string/UnicodeString.php
+#         vendor/symfony/string/phpunit.xml.dist
+#         vendor/symfony/string/AbstractUnicodeString.php
+#         vendor/symfony/string/Tests/AbstractAsciiTestCase.php
+#         vendor/symfony/string/Tests/LazyStringTest.php
+#         vendor/symfony/string/Tests/AbstractUnicodeTestCase.php
+#         vendor/symfony/string/Tests/FunctionsTest.php
+#         vendor/symfony/string/Tests/CodePointStringTest.php
+#         vendor/symfony/string/Tests/UnicodeStringTest.php
+#         vendor/symfony/string/Tests/ByteStringTest.php
+#         vendor/symfony/string/Tests/SluggerTest.php
+#         vendor/symfony/string/Tests/Inflector/FrenchInflectorTest.php
+#         vendor/symfony/string/Tests/Inflector/EnglishInflectorTest.php
+#         vendor/symfony/string/Inflector/InflectorInterface.php
+#         vendor/symfony/string/Inflector/EnglishInflector.php
+#         vendor/symfony/string/Inflector/FrenchInflector.php
+#         vendor/symfony/string/Slugger/AsciiSlugger.php
+#         vendor/symfony/string/Slugger/SluggerInterface.php
+#         vendor/symfony/string/Resources/functions.php
+#         vendor/symfony/string/Resources/WcswidthDataGenerator.php
+#         vendor/symfony/string/Resources/bin/update-data.php
+#         vendor/symfony/string/Resources/data/wcswidth_table_zero.php
+#         vendor/symfony/string/Resources/data/wcswidth_table_wide.php
+#         vendor/symfony/string/Exception/InvalidArgumentException.php
+#         vendor/symfony/string/Exception/ExceptionInterface.php
+#         vendor/symfony/string/Exception/RuntimeException.php
+#         vendor/symfony/polyfill-php80/bootstrap.php
+#         vendor/symfony/polyfill-php80/Php80.php
+#         vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php
+#         vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
+#         vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php
+#         vendor/symfony/polyfill-php80/Resources/stubs/Attribute.php
+#         vendor/symfony/config/ConfigCacheInterface.php
+#         vendor/symfony/config/FileLocatorInterface.php
+#         vendor/symfony/config/ResourceCheckerConfigCache.php
+#         vendor/symfony/config/ResourceCheckerInterface.php
+#         vendor/symfony/config/ConfigCacheFactory.php
+#         vendor/symfony/config/ResourceCheckerConfigCacheFactory.php
+#         vendor/symfony/config/ConfigCacheFactoryInterface.php
+#         vendor/symfony/config/phpunit.xml.dist
+#         vendor/symfony/config/ConfigCache.php
+#         vendor/symfony/config/FileLocator.php
+#         vendor/symfony/config/Tests/ConfigCacheTest.php
+#         vendor/symfony/config/Tests/ConfigCacheFactoryTest.php
+#         vendor/symfony/config/Tests/ResourceCheckerConfigCacheTest.php
+#         vendor/symfony/config/Tests/FileLocatorTest.php
+#         vendor/symfony/config/Tests/Util/XmlUtilsTest.php
+#         vendor/symfony/config/Tests/Loader/LoaderResolverTest.php
+#         vendor/symfony/config/Tests/Loader/FileLoaderTest.php
+#         vendor/symfony/config/Tests/Loader/DelegatingLoaderTest.php
+#         vendor/symfony/config/Tests/Loader/LoaderTest.php
+#         vendor/symfony/config/Tests/Fixtures/BadParent.php
+#         vendor/symfony/config/Tests/Fixtures/BadFileName.php
+#         vendor/symfony/config/Tests/Fixtures/BarNode.php
+#         vendor/symfony/config/Tests/Fixtures/ParseError.php
+#         vendor/symfony/config/Tests/Fixtures/Configuration/ExampleConfiguration.php
+#         vendor/symfony/config/Tests/Fixtures/Util/invalid.xml
+#         vendor/symfony/config/Tests/Fixtures/Util/document_type.xml
+#         vendor/symfony/config/Tests/Fixtures/Util/invalid_schema.xml
+#         vendor/symfony/config/Tests/Fixtures/Util/schema.xsd
+#         vendor/symfony/config/Tests/Fixtures/Util/valid.xml
+#         vendor/symfony/config/Tests/Fixtures/Builder/BarNodeDefinition.php
+#         vendor/symfony/config/Tests/Fixtures/Builder/NodeBuilder.php
+#         vendor/symfony/config/Tests/Fixtures/Builder/VariableNodeDefinition.php
+#         vendor/symfony/config/Tests/Fixtures/Resource/ConditionalClass.php
+#         vendor/symfony/config/Tests/Resource/ComposerResourceTest.php
+#         vendor/symfony/config/Tests/Resource/ResourceStub.php
+#         vendor/symfony/config/Tests/Resource/FileExistenceResourceTest.php
+#         vendor/symfony/config/Tests/Resource/DirectoryResourceTest.php
+#         vendor/symfony/config/Tests/Resource/ClassExistenceResourceTest.php
+#         vendor/symfony/config/Tests/Resource/FileResourceTest.php
+#         vendor/symfony/config/Tests/Resource/ReflectionClassResourceTest.php
+#         vendor/symfony/config/Tests/Resource/GlobResourceTest.php
+#         vendor/symfony/config/Tests/Exception/LoaderLoadExceptionTest.php
+#         vendor/symfony/config/Tests/Definition/PrototypedArrayNodeTest.php
+#         vendor/symfony/config/Tests/Definition/ScalarNodeTest.php
+#         vendor/symfony/config/Tests/Definition/FloatNodeTest.php
+#         vendor/symfony/config/Tests/Definition/MergeTest.php
+#         vendor/symfony/config/Tests/Definition/IntegerNodeTest.php
+#         vendor/symfony/config/Tests/Definition/BooleanNodeTest.php
+#         vendor/symfony/config/Tests/Definition/BaseNodeTest.php
+#         vendor/symfony/config/Tests/Definition/FinalizationTest.php
+#         vendor/symfony/config/Tests/Definition/NormalizationTest.php
+#         vendor/symfony/config/Tests/Definition/ArrayNodeTest.php
+#         vendor/symfony/config/Tests/Definition/EnumNodeTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/TreeBuilderTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/NumericNodeDefinitionTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/BooleanNodeDefinitionTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/NodeDefinitionTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/ArrayNodeDefinitionTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/ExprBuilderTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/NodeBuilderTest.php
+#         vendor/symfony/config/Tests/Definition/Builder/EnumNodeDefinitionTest.php
+#         vendor/symfony/config/Tests/Definition/Dumper/YamlReferenceDumperTest.php
+#         vendor/symfony/config/Tests/Definition/Dumper/XmlReferenceDumperTest.php
+#         vendor/symfony/config/Util/XmlUtils.php
+#         vendor/symfony/config/Util/Exception/XmlParsingException.php
+#         vendor/symfony/config/Util/Exception/InvalidXmlException.php
+#         vendor/symfony/config/Loader/DelegatingLoader.php
+#         vendor/symfony/config/Loader/LoaderInterface.php
+#         vendor/symfony/config/Loader/LoaderResolver.php
+#         vendor/symfony/config/Loader/GlobFileLoader.php
+#         vendor/symfony/config/Loader/LoaderResolverInterface.php
+#         vendor/symfony/config/Loader/Loader.php
+#         vendor/symfony/config/Loader/FileLoader.php
+#         vendor/symfony/config/Resource/FileResource.php
+#         vendor/symfony/config/Resource/ResourceInterface.php
+#         vendor/symfony/config/Resource/FileExistenceResource.php
+#         vendor/symfony/config/Resource/SelfCheckingResourceChecker.php
+#         vendor/symfony/config/Resource/ComposerResource.php
+#         vendor/symfony/config/Resource/SelfCheckingResourceInterface.php
+#         vendor/symfony/config/Resource/DirectoryResource.php
+#         vendor/symfony/config/Resource/ClassExistenceResource.php
+#         vendor/symfony/config/Resource/GlobResource.php
+#         vendor/symfony/config/Resource/ReflectionClassResource.php
+#         vendor/symfony/config/Exception/FileLocatorFileNotFoundException.php
+#         vendor/symfony/config/Exception/FileLoaderImportCircularReferenceException.php
+#         vendor/symfony/config/Exception/LoaderLoadException.php
+#         vendor/symfony/config/Definition/Processor.php
+#         vendor/symfony/config/Definition/PrototypedArrayNode.php
+#         vendor/symfony/config/Definition/IntegerNode.php
+#         vendor/symfony/config/Definition/ArrayNode.php
+#         vendor/symfony/config/Definition/BaseNode.php
+#         vendor/symfony/config/Definition/FloatNode.php
+#         vendor/symfony/config/Definition/EnumNode.php
+#         vendor/symfony/config/Definition/NumericNode.php
+#         vendor/symfony/config/Definition/NodeInterface.php
+#         vendor/symfony/config/Definition/ConfigurationInterface.php
+#         vendor/symfony/config/Definition/PrototypeNodeInterface.php
+#         vendor/symfony/config/Definition/VariableNode.php
+#         vendor/symfony/config/Definition/ScalarNode.php
+#         vendor/symfony/config/Definition/BooleanNode.php
+#         vendor/symfony/config/Definition/Builder/ScalarNodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/ParentNodeDefinitionInterface.php
+#         vendor/symfony/config/Definition/Builder/ArrayNodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/TreeBuilder.php
+#         vendor/symfony/config/Definition/Builder/FloatNodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/IntegerNodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/MergeBuilder.php
+#         vendor/symfony/config/Definition/Builder/NodeParentInterface.php
+#         vendor/symfony/config/Definition/Builder/BooleanNodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/BuilderAwareInterface.php
+#         vendor/symfony/config/Definition/Builder/NodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/NormalizationBuilder.php
+#         vendor/symfony/config/Definition/Builder/ExprBuilder.php
+#         vendor/symfony/config/Definition/Builder/EnumNodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/NodeBuilder.php
+#         vendor/symfony/config/Definition/Builder/NumericNodeDefinition.php
+#         vendor/symfony/config/Definition/Builder/ValidationBuilder.php
+#         vendor/symfony/config/Definition/Builder/VariableNodeDefinition.php
+#         vendor/symfony/config/Definition/Exception/UnsetKeyException.php
+#         vendor/symfony/config/Definition/Exception/InvalidDefinitionException.php
+#         vendor/symfony/config/Definition/Exception/ForbiddenOverwriteException.php
+#         vendor/symfony/config/Definition/Exception/InvalidTypeException.php
+#         vendor/symfony/config/Definition/Exception/DuplicateKeyException.php
+#         vendor/symfony/config/Definition/Exception/Exception.php
+#         vendor/symfony/config/Definition/Exception/InvalidConfigurationException.php
+#         vendor/symfony/config/Definition/Dumper/XmlReferenceDumper.php
+#         vendor/symfony/config/Definition/Dumper/YamlReferenceDumper.php
+#         vendor/symfony/polyfill-php73/bootstrap.php
+#         vendor/symfony/polyfill-php73/Php73.php
+#         vendor/symfony/polyfill-php73/Resources/stubs/JsonException.php
+#         vendor/vitexsoftware/ease-fluentpdo/phpunit.xml
+#         vendor/vitexsoftware/ease-fluentpdo/php-ease-fluentpdo.svg
+#         vendor/vitexsoftware/ease-fluentpdo/Examples/index.php
+#         vendor/vitexsoftware/ease-fluentpdo/Examples/phinx-adapter.php
+#         vendor/vitexsoftware/ease-fluentpdo/src/Ease/Logger/LogToSQL.php
+#         vendor/vitexsoftware/ease-fluentpdo/src/Ease/SQL/Orm.php
+#         vendor/vitexsoftware/ease-fluentpdo/src/Ease/SQL/SQL.php
+#         vendor/vitexsoftware/ease-fluentpdo/src/Ease/SQL/PDO.php
+#         vendor/vitexsoftware/ease-fluentpdo/src/Ease/SQL/Engine.php
+#         vendor/vitexsoftware/ease-fluentpdo/tests/bootstrap.php
+#         vendor/vitexsoftware/ease-fluentpdo/tests/seeds/Prepare.php
+#         vendor/vitexsoftware/ease-fluentpdo/tests/src/Ease/SQL/PDOTest.php
+#         vendor/vitexsoftware/ease-fluentpdo/tests/src/Ease/SQL/EngineTest.php
+#         vendor/vitexsoftware/ease-fluentpdo/tests/src/Ease/SQL/SQLTest.php
+#         vendor/vitexsoftware/ease-fluentpdo/tests/migrations/20200724112015_test_table.php
+#         vendor/vitexsoftware/ease-fluentpdo/nbproject/project.xml
+#         vendor/vitexsoftware/ease-fluentpdo/nbproject/private/private.xml
+#         vendor/vitexsoftware/ease-core/project-logo.svg
+#         vendor/vitexsoftware/ease-core/Examples/Logger/logToConsole.php
+#         vendor/vitexsoftware/ease-core/Examples/Logger/logToEmail.php
+#         vendor/vitexsoftware/ease-core/src/Ease/RecordKey.php
+#         vendor/vitexsoftware/ease-core/src/Ease/User.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Shared.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Atom.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Functions.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Sand.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Brick.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Mailer.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Molecule.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Locale.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Anonym.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Exception.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToConsole.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToEmail.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToStd.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Loggingable.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToEventlog.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToFile.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Message.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Logging.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Regent.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToSyslog.php
+#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToMemory.php
+#         vendor/vitexsoftware/ease-core/tests/LoggingTester.php
+#         vendor/vitexsoftware/ease-core/tests/BrickTester.php
+#         vendor/vitexsoftware/ease-core/tests/configuration.xml
+#         vendor/vitexsoftware/ease-core/tests/Bootstrap.php
+#         vendor/vitexsoftware/ease-core/tests/SandTester.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/UserTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/AnonymTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/MoleculeTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/MailerTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/LocaleTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/BrickTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/ExceptionTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/FunctionsTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/RecordKeyTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/SandTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/AtomTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/SharedTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToMemoryTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/LoggingTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToEmailTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToEventlogTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToSyslogTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToFileTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/RegentTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/MessageTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToConsoleTest.php
+#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToStdTest.php
+#         nbproject/project.xml
+#         nbproject/private/private.xml
+#         db/migrations/20210318083814_package_contents.php
+#         db/migrations/20210318083800_packages.php
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
+
+#----------------------------------------------------------------------------
+# License file: LICENSE
+ MIT License
+ .
+ Copyright (c) 2021 Vitex Software
+ .
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.

@@ -1,5 +1,5 @@
 {
-    "name": "vitexsoftware/deb-sql-indexer",
+    "name": "vitexsoftware/debs2sql",
     "description": "Tool used to setup AbraFlexi multiinstance",
     "version": "0.1",
     "type": "project",
@@ -12,9 +12,12 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "robmorgan/phinx": "^0.12.6",
         "vitexsoftware/ease-core": "^1.12",
         "vitexsoftware/ease-fluentpdo": "^1.0"
+    },
+
+    "require-dev": {
+        "robmorgan/phinx": "^0.12.6"
     },
 
     "autoload": {
