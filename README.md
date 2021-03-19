@@ -11,10 +11,10 @@ APP_DEBUG=true
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=deb2sql
-DB_USERNAME=deb2sql
-DB_PASSWORD=deb2sql
-EMAIL_FROM=deb2sql@localhost
+DB_DATABASE=debs2sql
+DB_USERNAME=debs2sql
+DB_PASSWORD=debs2sql
+EMAIL_FROM=debs2sql@localhost
 SEND_INFO_TO=admin@localhost
 REPO_DIR=/home/vitex/WWW/repo.vitexsoftware.cz/
 ```

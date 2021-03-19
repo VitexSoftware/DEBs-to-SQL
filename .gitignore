@@ -1,6 +1,10 @@
 /vendor/
 composer.lock
-/debian/deb2sql/
+/debian/debs2sql/
 
 
 /nbproject/
+/debian/debhelper-build-stamp
+/debian/debs2sql.debhelper.log
+/debian/debs2sql.substvars
+/debian/files

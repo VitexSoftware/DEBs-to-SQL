@@ -8,7 +8,7 @@ Files:     .env
            .gitignore
            Makefile
            README.md
-           bin/deb2sql
+           bin/debs2sql
            composer.json
            composer.lock
            nbproject/private/config.properties

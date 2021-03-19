@@ -24,7 +24,7 @@
     }
   },
   "config": {
-    "vendor-dir": "/var/lib/deb2sql"
+    "vendor-dir": "/var/lib/debs2sql"
   },
   "repositories": [
     {

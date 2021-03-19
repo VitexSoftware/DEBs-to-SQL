@@ -13,7 +13,7 @@ if (file_exists('../.env')) {
     $shared->loadConfig('../.env', true);
 }
 
-define('APP_NAME', 'deb2sql');
+define('APP_NAME', 'debs2sql');
 define('EASE_LOGGER', 'syslog|console');
 
 $repositor = new \DebToSQL\Repository();

@@ -1,2 +1,2 @@
 #!/bin/bash
-php -f /usr/lib/deb2sql/indexer.php
+php -f /usr/lib/debs2sql/indexer.php

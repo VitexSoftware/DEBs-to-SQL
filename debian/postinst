@@ -18,7 +18,7 @@ su - $WEBUSER -s /bin/bash -c 'COMPOSER_HOME="/var/lib/composer" composer -o ins
 
 case "$1" in
     configure)
-        echo "edit /etc/deb2sql/.env and run deb2sql-phinx to prepare database";
+        echo "edit /etc/debs2sql/.env and run debs2sql-phinx to prepare database";
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
