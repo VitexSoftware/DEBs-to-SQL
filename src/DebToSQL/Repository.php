@@ -37,6 +37,9 @@ class Repository extends \Ease\SQL\Engine {
         }
     }
 
+    /**
+     * Search for Distributions in Repository
+     */
     public function parseDists() {
         $this->logBanner(\Ease\Shared::appName(), 'in: ' . $this->repoDir);
         foreach (array_keys($this->dists) as $dist) {
@@ -44,6 +47,11 @@ class Repository extends \Ease\SQL\Engine {
         }
     }
 
+    /**
+     * Search for Suites in Distribution
+     * 
+     * @param string $distName
+     */
     public function parseDist($distName) {
         $this->addStatusMessage(_('Parsing distro') . ': ' . $distName);
         $suites = $this->parseSuites($distName);
