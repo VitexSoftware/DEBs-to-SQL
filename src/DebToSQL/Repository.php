@@ -115,7 +115,7 @@ class Repository extends \Ease\SQL\Engine {
             $this->arch[$distName][$suite][$arch] = $this->dists[$distName] . '/' . $suite . '/' . $arch;
 
             $packages = $this->arch[$distName][$suite][$arch] . '/Packages';
-            if (file_exists($packages)) {
+            if (file_exists($packages) && !strstr($packages, strval(\Ease\Functions::cfg('SKIP')))) {
                 $this->packages[$distName][$suite][$arch] = $this->readpackages($packages);
                 $this->addStatusMessage('Found ' . count($this->packages[$distName][$suite][$arch]) . ' packages in ' . $distName . '/' . $suite . '/' . $arch, 'success');
             }
