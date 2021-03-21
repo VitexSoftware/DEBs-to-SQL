@@ -1,6 +1,16 @@
+debs2sql (0.2) UNRELEASED; urgency=low
+
+  * Skiplist added
+  * Package contents indexer added
+
+
+ -- CyberVitexus <>  Fri, 19 Mar 2021 15:25:40 +0100
+
 debs2sql (0.1) UNRELEASED; urgency=low
 
   * Initial release. Closes: #nnnn
     <nnnn is the bug number of your ITP>
 
+
  -- CyberVitexus <>  Fri, 19 Mar 2021 15:25:40 +0100
+

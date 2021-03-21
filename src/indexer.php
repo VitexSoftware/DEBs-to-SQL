@@ -21,3 +21,4 @@ $repositor->parseDists();
 
 $repositor->saveAllToSQL();
 
+$repositor->updatePresenceStatus();

@@ -115,7 +115,13 @@ class Repository extends \Ease\SQL\Engine {
             $this->arch[$distName][$suite][$arch] = $this->dists[$distName] . '/' . $suite . '/' . $arch;
 
             $packages = $this->arch[$distName][$suite][$arch] . '/Packages';
-            if (file_exists($packages) && !strstr($packages, strval(\Ease\Functions::cfg('SKIP')))) {
+            if (file_exists($packages)) {
+
+                if (!empty(\Ease\Functions::cfg('SKIP')) && strstr($packages, \Ease\Functions::cfg('SKIP'))) {
+                    $this->addStatusMessage('Private repo ' . $packages . ' skipped');
+                    continue;
+                }
+
                 $this->packages[$distName][$suite][$arch] = $this->readpackages($packages);
                 $this->addStatusMessage('Found ' . count($this->packages[$distName][$suite][$arch]) . ' packages in ' . $distName . '/' . $suite . '/' . $arch, 'success');
             }
@@ -227,7 +233,8 @@ class Repository extends \Ease\SQL\Engine {
                         $distro = $fpparts[1];
                         $section = $fpparts[2];
                         $origFile = $this->poolDir . '/' . $distro . '/' . ($section == 'main') ? '' : $section . '/' . $pName;
-                        $packages[$pName]['fileMtime'] = filemtime($origFile);
+                        $packages[$pName]['fileMtime'] = file_exists($origFile) ? filemtime($origFile) : null;
+                        $packages[$pName]['Existing'] = file_exists($origFile) ? 1 : 0;
                     default:
                         $packages[$pName][str_replace('-', '', $key)] = trim($value);
                         break;
@@ -242,6 +249,9 @@ class Repository extends \Ease\SQL\Engine {
         return $packages;
     }
 
+    /**
+     * Save data to Database
+     */
     public function saveAllToSQL() {
         $saved = [];
         foreach ($this->packages as $dist => $suites) {
@@ -264,15 +274,30 @@ class Repository extends \Ease\SQL\Engine {
                         unset($packageData['Build-Ids']);
 
                         if (array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL(['id'], ['Filename' => $packageData['Filename']]))) {
-                            if ($this->insertToSQL($this->onlyKnownColumns($packageData))) {
-                                $saved[] = $packageData['Name'];
+
+                            if (file_exists($this->repoDir . '/' . $packageData['Filename'])) {
+                                if ($this->insertToSQL($this->onlyKnownColumns($packageData))) {
+                                    $saved[] = $packageData['Name'];
+                                }
                             }
+                        } else {
+                            
                         }
                     }
                 }
             }
         }
         $this->addStatusMessage((empty($saved) ? 'none' : count($saved)) . ' packages saved: ' . implode(',', $saved), empty($saved) ? 'warning' : 'success' );
+    }
+
+    public function updatePresenceStatus() {
+        foreach ($this->getColumnsFromSQL(['id', 'Filename', 'Existing']) as $pack) {
+            $presence = file_exists($this->repoDir . '/' . $pack['Filename']);
+            if ($presence != $pack['Existing']) {
+                $this->updateToSQL(['id' => $pack['id'], 'Existing' => $presence]);
+                $this->addStatusMessage($pack['Filename'] . ' presence changed');
+            }
+        }
     }
 
 }

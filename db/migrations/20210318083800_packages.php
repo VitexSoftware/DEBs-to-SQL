@@ -56,7 +56,7 @@ final class Packages extends AbstractMigration {
                 ->addColumn('Provides', 'string', ['null' => true])
                 ->addColumn('Recommends', 'string', ['null' => true])
                 ->addColumn('Suggests', 'string', ['null' => true, 'length' => 1000])
-                ->addColumn('Exists', 'boolean', ['default' => 1])
+                ->addColumn('Existing', 'boolean', ['default' => 1])
                 ->addColumn('fileMtime', 'timestamp')
                 ->addColumn('created', 'timestamp', ['limit' => 6, 'default' => 'CURRENT_TIMESTAMP'])
                 ->addIndex(['Name'])
