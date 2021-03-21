@@ -294,7 +294,7 @@ class Repository extends \Ease\SQL\Engine {
         foreach ($this->getColumnsFromSQL(['id', 'Filename', 'Existing']) as $pack) {
             $presence = file_exists($this->repoDir . '/' . $pack['Filename']);
             if ($presence != $pack['Existing']) {
-                $this->updateToSQL(['id' => $pack['id'], 'Existing' => $presence]);
+                $this->updateToSQL(['id' => $pack['id'], 'updated'=>'NOW()','Existing' => $presence]);
                 $this->addStatusMessage($pack['Filename'] . ' presence changed');
             }
         }

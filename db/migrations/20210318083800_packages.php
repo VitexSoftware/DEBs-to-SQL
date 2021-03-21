@@ -59,6 +59,7 @@ final class Packages extends AbstractMigration {
                 ->addColumn('Existing', 'boolean', ['default' => 1])
                 ->addColumn('fileMtime', 'timestamp')
                 ->addColumn('created', 'timestamp', ['limit' => 6, 'default' => 'CURRENT_TIMESTAMP'])
+                ->addColumn('updated', 'timestamp', ['limit' => 6, 'default' => 'CURRENT_TIMESTAMP'])
                 ->addIndex(['Name'])
                 ->addIndex(['Architecture'])
                 ->addIndex(['Distribution'])

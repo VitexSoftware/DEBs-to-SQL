@@ -1,7 +1,7 @@
 {
   "name": "vitexsoftware/debs2sql",
   "description": "Tool used to setup AbraFlexi multiinstance",
-  "version": "0.1",
+  "version": "0.2",
   "type": "project",
   "license": "MIT",
   "authors": [
