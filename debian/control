@@ -7,7 +7,7 @@ Standards-Version: 4.1.4
 Homepage: https://github.com/VitexSoftware/DEBs-to-SQL
 
 Package: debs2sql
-Architecture: any
+Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}, php-vitexsoftware-ease-fluentpdo, php-robmorgan-phinx
 Description: Index Debian package repository into SQL
