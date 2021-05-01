@@ -1,0 +1,3 @@
+#!/bin/bash
+php -f /usr/lib/debs2sql/contentor.php
+
