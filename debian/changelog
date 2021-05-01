@@ -1,8 +1,13 @@
+debs2sql (0.3) UNRELEASED; urgency=low
+
+  * Package contents indexer added
+
+ -- CyberVitexus <>  Fri, 19 Mar 2021 15:25:40 +0100
+
 debs2sql (0.2) UNRELEASED; urgency=low
 
   * Skiplist added
   * Package contents indexer added
-
 
  -- CyberVitexus <>  Fri, 19 Mar 2021 15:25:40 +0100
 

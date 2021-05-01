@@ -265,7 +265,7 @@ class Repository extends \Ease\SQL\Engine {
                         $packageData['Distribution'] = $dist;
                         $packageData['Suite'] = $suite;
                         $packageData['Architecture'] = $arch;
-                        if ($packageData['fileMtime']) {
+                        if (array_key_exists('fileMtime', $packageData) && $packageData['fileMtime']) {
                             $packageData['fileMtime'] = (New \DateTime())->setTimestamp($packageData['fileMtime'])->format('Y-m-d H:i:s');
                         } else {
                             unset($packageData['fileMtime']);
@@ -276,7 +276,9 @@ class Repository extends \Ease\SQL\Engine {
                         if (array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL(['id'], ['Filename' => $packageData['Filename']]))) {
 
                             if (file_exists($this->repoDir . '/' . $packageData['Filename'])) {
-                                if ($this->insertToSQL($this->onlyKnownColumns($packageData))) {
+                                $this->setMyKey(null);
+                                if ($this->dbsync($this->onlyKnownColumns($packageData))) {
+                                    $this->indexPackageContents($packageData);
                                     $saved[] = $packageData['Name'];
                                 }
                             }
@@ -290,14 +292,22 @@ class Repository extends \Ease\SQL\Engine {
         $this->addStatusMessage((empty($saved) ? 'none' : count($saved)) . ' packages saved: ' . implode(',', $saved), empty($saved) ? 'warning' : 'success' );
     }
 
+    /**
+     * Check wether the package exist on the disk
+     */
     public function updatePresenceStatus() {
         foreach ($this->getColumnsFromSQL(['id', 'Filename', 'Existing']) as $pack) {
             $presence = file_exists($this->repoDir . '/' . $pack['Filename']);
             if ($presence != $pack['Existing']) {
-                $this->updateToSQL(['id' => $pack['id'], 'updated'=>'NOW()','Existing' => $presence]);
+                $this->updateToSQL(['id' => $pack['id'], 'updated' => date('Y-m-d H:i:s'), 'Existing' => $presence]);
                 $this->addStatusMessage($pack['Filename'] . ' presence changed');
             }
         }
+    }
+
+    public function indexPackageContents($packageData) {
+        $contentor = new Files();
+        $contentor->indexPackageContents($this->getMyKey(), $this->repoDir . '/' . $packageData['Filename']);
     }
 
 }
