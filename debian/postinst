@@ -27,6 +27,7 @@ case "$1" in
 	chown $WEB_USER /usr/lib/debs2sql/composer.lock
 	su - $WEB_USER -s /bin/bash -c 'COMPOSER_HOME="/var/lib/composer" composer -o install -d /usr/lib/debs2sql/'
 
+#todo composer-debian debs2sql
 
 
         echo "edit /etc/debs2sql/.env and run debs2sql-phinx to prepare database";
