@@ -9,7 +9,6 @@ set -e
 
 case "$1" in
     configure)
-	cat /var/lib/dpkg/info/debs2sql.postinst
 	composer-debian debs2sql
         echo "edit /etc/debs2sql/.env and run debs2sql-phinx to prepare database";
     ;;
