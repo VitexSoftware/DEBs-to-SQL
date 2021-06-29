@@ -14,6 +14,7 @@
 override_dh_install:
 	dh_install
 	jq '.version = "$(shell dpkg-parsechangelog --show-field Version)"' debian/conf/composer.json | sponge debian/conf/composer.json
-	sed -i -e 's/..\/vendor/\/var\/lib\/debs2sql/g' debian/debs2sql/usr/lib/debs2sql/*.php
+	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/debs2sql/g' debian/debs2sql/usr/lib/debs2sql/*.php
 	sed -i -e 's/\.\.\/.env/\/etc\/debs2sql\/\.env/g'  debian/debs2sql/usr/lib/debs2sql/*.php
 #	sed -i -e 's/..\/i18n/\/usr\/share\/locale/g'      debian/debs2sql/usr/lib/debs2sql/*.php
+
