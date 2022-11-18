@@ -139,45 +139,14 @@ class Repository extends \Ease\SQL\Engine {
     public function onlyKnownColumns($dataRaw) {
         $dataOriginal = $dataRaw;
         $dataFiltered = [];
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Name');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Package');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Appname');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Essential');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Vendor');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'License');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Distribution');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Suite');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Source');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Version');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Architecture');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'MultiArch');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Maintainer');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'InstalledSize');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Depends');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'PreDepends');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Breaks');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Enhances');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Replaces');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Section');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Priority');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Description');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'LongDescription');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'AutoBuiltPackage');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Filename');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'MD5sum');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'SHA1');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'SHA256');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'SHA512');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Size');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'AutoBuiltPackage');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Conflicts');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Homepage');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Provides');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Recommends');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Suggests');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'Exists');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'fileMtime');
-        \Ease\Functions::divDataArray($dataRaw, $dataFiltered, 'created');
+
+        $knownColumns = ['Name', 'Package', 'Appname', 'Essential', 'Vendor', 'License', 'Distribution', 'Suite', 'Source', 'Version', 'Architecture', 'MultiArch', 'Maintainer', 'InstalledSize', 'Depends'
+            , 'PreDepends', 'Breaks', 'Enhances', 'Replaces', 'Section', 'Priority', 'Description', 'LongDescription', 'AutoBuiltPackage', 'Filename', 'MD5sum', 'SHA1', 'SHA256', 'SHA512'
+            , 'Size', 'AutoBuiltPackage', 'Conflicts', 'Homepage', 'Provides', 'Recommends', 'Suggests', 'Exists', 'fileMtime', 'created'
+        ];
+        foreach ($knownColumns as $column) {
+            \Ease\Functions::divDataArray($dataRaw, $dataFiltered, $column);
+        }
 
         $originalKeys = array_keys($dataOriginal);
         $filteredKeys = array_keys($dataFiltered);
@@ -216,12 +185,18 @@ class Repository extends \Ease\SQL\Engine {
                         $packages[$pName][$key] = trim($value);
                         $packages[$pName]['LongDescription'] = '';
                         while (($buffer = fgets($handle, 4096)) !== false) {
-                            if ($buffer[0] == ' ') {
-                                $packages[$pName]['LongDescription'] .= trim($buffer);
-                            } else {
-                                list( $key, $value ) = explode(':', $buffer);
-                                $packages[$pName][$key] = trim($value);
-                                break;
+                            if (trim($buffer)) {
+                                if ($buffer[0] == ' ') {
+                                    $packages[$pName]['LongDescription'] .= trim($buffer);
+                                } else {
+                                    if (strstr($buffer, ':')) {
+                                        list($key, $value) = preg_split('/:/', $buffer, 2);
+                                        $packages[$pName][$key] = trim($value, " \t\n\r\0\x0B'\"");
+                                    } else {
+                                        $this->addStatusMessage($pName . ' - ' . _('Unknown field') . ': ' . $buffer, 'warning');
+                                    }
+                                    break;
+                                }
                             }
                         }
                         break;
