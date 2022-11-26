@@ -1,5 +1,4 @@
 <?php
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,17 +12,18 @@ namespace DebToSQL;
  *
  * @author vitex
  */
-class Repository extends \Ease\SQL\Engine {
-
-    public $dists = [];
+class Repository extends \Ease\SQL\Engine
+{
+    public $dists   = [];
     public $repoDir = '';
-    private $archs = [];
+    private $archs  = [];
     public $myTable = 'packages';
 
-    public function __construct(array $skiplist = []) /* : \DirectoryIterator */ {
+    public function __construct(array $skiplist = []) /* : \DirectoryIterator */
+    {
         $this->repoDir = \Ease\Functions::cfg('REPO_DIR');
-        $this->poolDir = $this->repoDir . 'pool/';
-        foreach (new \DirectoryIterator($this->repoDir . 'dists/') as $fileInfo) {
+        $this->poolDir = $this->repoDir.'pool/';
+        foreach (new \DirectoryIterator($this->repoDir.'dists/') as $fileInfo) {
             if ($fileInfo->isDot()) {
                 continue;
             }
@@ -33,15 +33,16 @@ class Repository extends \Ease\SQL\Engine {
             if (strstr($fileInfo->getFilename(), '-')) {
                 continue;
             }
-            $this->dists[$fileInfo->getFilename()] = $this->repoDir . 'dists/' . $fileInfo->getFilename();
+            $this->dists[$fileInfo->getFilename()] = $this->repoDir.'dists/'.$fileInfo->getFilename();
         }
     }
 
     /**
      * Search for Distributions in Repository
      */
-    public function parseDists() {
-        $this->logBanner(\Ease\Shared::appName(), 'in: ' . $this->repoDir);
+    public function parseDists()
+    {
+        $this->logBanner(\Ease\Shared::appName(), 'in: '.$this->repoDir);
         foreach (array_keys($this->dists) as $dist) {
             $this->parseDist($dist);
         }
@@ -52,8 +53,9 @@ class Repository extends \Ease\SQL\Engine {
      * 
      * @param string $distName
      */
-    public function parseDist($distName) {
-        $this->addStatusMessage(_('Parsing distro') . ': ' . $distName);
+    public function parseDist($distName)
+    {
+        $this->addStatusMessage(_('Parsing distro').': '.$distName);
         $suites = $this->parseSuites($distName);
 
         foreach (array_keys($suites) as $suite) {
@@ -68,7 +70,8 @@ class Repository extends \Ease\SQL\Engine {
      * 
      * @return array
      */
-    public function parseSuites($distName) {
+    public function parseSuites($distName)
+    {
         foreach (new \DirectoryIterator($this->dists[$distName]) as $fileInfo) {
             if ($fileInfo->isDot()) {
                 continue;
@@ -82,9 +85,9 @@ class Repository extends \Ease\SQL\Engine {
             if (!$fileInfo->isDir()) {
                 continue;
             }
-            $suite = $fileInfo->getFilename();
-            $this->addStatusMessage($distName . ': suite found: ' . $suite);
-            $this->suites[$distName][$suite] = $this->dists[$distName] . '/' . $suite;
+            $suite                           = $fileInfo->getFilename();
+            $this->addStatusMessage($distName.': suite found: '.$suite);
+            $this->suites[$distName][$suite] = $this->dists[$distName].'/'.$suite;
         }
         return $this->suites[$distName];
     }
@@ -97,8 +100,9 @@ class Repository extends \Ease\SQL\Engine {
      * 
      * @return array archs found
      */
-    public function parseArchs($distName, $suite) {
-        foreach (new \DirectoryIterator($this->dists[$distName] . '/' . $suite) as $fileInfo) {
+    public function parseArchs($distName, $suite)
+    {
+        foreach (new \DirectoryIterator($this->dists[$distName].'/'.$suite) as $fileInfo) {
             if ($fileInfo->isDot()) {
                 continue;
             }
@@ -111,19 +115,21 @@ class Repository extends \Ease\SQL\Engine {
 
             $arch = $fileInfo->getFilename();
 
-            $this->addStatusMessage('Architecture found: ' . $distName . '/' . $suite . ': ' . $arch);
-            $this->arch[$distName][$suite][$arch] = $this->dists[$distName] . '/' . $suite . '/' . $arch;
+            $this->addStatusMessage('Architecture found: '.$distName.'/'.$suite.': '.$arch);
+            $this->arch[$distName][$suite][$arch] = $this->dists[$distName].'/'.$suite.'/'.$arch;
 
-            $packages = $this->arch[$distName][$suite][$arch] . '/Packages';
+            $packages = $this->arch[$distName][$suite][$arch].'/Packages';
             if (file_exists($packages)) {
 
-                if (!empty(\Ease\Functions::cfg('SKIP')) && strstr($packages, \Ease\Functions::cfg('SKIP'))) {
-                    $this->addStatusMessage('Private repo ' . $packages . ' skipped');
+                if (!empty(\Ease\Functions::cfg('SKIP')) && strstr($packages,
+                        \Ease\Functions::cfg('SKIP'))) {
+                    $this->addStatusMessage('Private repo '.$packages.' skipped');
                     continue;
                 }
 
                 $this->packages[$distName][$suite][$arch] = $this->readpackages($packages);
-                $this->addStatusMessage('Found ' . count($this->packages[$distName][$suite][$arch]) . ' packages in ' . $distName . '/' . $suite . '/' . $arch, 'success');
+                $this->addStatusMessage('Found '.count($this->packages[$distName][$suite][$arch]).' packages in '.$distName.'/'.$suite.'/'.$arch,
+                    'success');
             }
         }
         return $this->arch[$distName][$suite];
@@ -136,13 +142,19 @@ class Repository extends \Ease\SQL\Engine {
      * 
      * @return array
      */
-    public function onlyKnownColumns($dataRaw) {
+    public function onlyKnownColumns($dataRaw)
+    {
         $dataOriginal = $dataRaw;
         $dataFiltered = [];
 
-        $knownColumns = ['Name', 'Package', 'Appname', 'Essential', 'Vendor', 'License', 'Distribution', 'Suite', 'Source', 'Version', 'Architecture', 'MultiArch', 'Maintainer', 'InstalledSize', 'Depends'
-            , 'PreDepends', 'Breaks', 'Enhances', 'Replaces', 'Section', 'Priority', 'Description', 'LongDescription', 'AutoBuiltPackage', 'Filename', 'MD5sum', 'SHA1', 'SHA256', 'SHA512'
-            , 'Size', 'AutoBuiltPackage', 'Conflicts', 'Homepage', 'Provides', 'Recommends', 'Suggests', 'Exists', 'fileMtime', 'created'
+        $knownColumns = ['Name', 'Package', 'Appname', 'Essential', 'Vendor', 'License',
+            'Distribution', 'Suite', 'Source', 'Version', 'Architecture', 'MultiArch',
+            'Maintainer', 'InstalledSize', 'Depends'
+            , 'PreDepends', 'Breaks', 'Enhances', 'Replaces', 'Section', 'Priority',
+            'Description', 'LongDescription', 'AutoBuiltPackage', 'Filename', 'MD5sum',
+            'SHA1', 'SHA256', 'SHA512'
+            , 'Size', 'AutoBuiltPackage', 'Conflicts', 'Homepage', 'Provides', 'Recommends',
+            'Suggests', 'Exists', 'fileMtime', 'created'
         ];
         foreach ($knownColumns as $column) {
             \Ease\Functions::divDataArray($dataRaw, $dataFiltered, $column);
@@ -152,7 +164,8 @@ class Repository extends \Ease\SQL\Engine {
         $filteredKeys = array_keys($dataFiltered);
 
         if (count($originalKeys) != count($filteredKeys)) {
-            $this->addStatusMessage('Unknown column: ' . implode(',', array_diff($originalKeys, $filteredKeys)), 'warning');
+            $this->addStatusMessage('Unknown column: '.implode(',',
+                    array_diff($originalKeys, $filteredKeys)), 'warning');
         }
 
         return $dataFiltered;
@@ -164,10 +177,11 @@ class Repository extends \Ease\SQL\Engine {
      * 
      * @return type
      */
-    public function readpackages($pkgFile) {
+    public function readpackages($pkgFile)
+    {
         $packages = [];
-        $pName = null;
-        $handle = fopen($pkgFile, "r");
+        $pName    = null;
+        $handle   = fopen($pkgFile, "r");
         $position = 0;
         if ($handle) {
             while (($buffer = fgets($handle, 4096)) !== false) {
@@ -177,23 +191,27 @@ class Repository extends \Ease\SQL\Engine {
                 list( $key, $value) = explode(': ', $buffer);
                 switch ($key) {
                     case 'Package':
-                        $pName = trim($value);
+                        $pName                               = trim($value);
                         $position++;
-                        $packages[$pName]['fileMtime'] = time();
+                        $packages[$pName]['fileMtime']       = time();
                         break;
                     case 'Description':
-                        $packages[$pName][$key] = trim($value);
+                        $packages[$pName][$key]              = trim($value);
                         $packages[$pName]['LongDescription'] = '';
-                        while (($buffer = fgets($handle, 4096)) !== false) {
+                        while (($buffer                              = fgets($handle,
+                        4096)) !== false) {
                             if (trim($buffer)) {
                                 if ($buffer[0] == ' ') {
                                     $packages[$pName]['LongDescription'] .= trim($buffer);
                                 } else {
                                     if (strstr($buffer, ':')) {
-                                        list($key, $value) = preg_split('/:/', $buffer, 2);
-                                        $packages[$pName][$key] = trim($value, " \t\n\r\0\x0B'\"");
+                                        list($key, $value) = preg_split('/:/',
+                                            $buffer, 2);
+                                        $packages[$pName][$key] = trim($value,
+                                            " \t\n\r\0\x0B'\"");
                                     } else {
-                                        $this->addStatusMessage($pName . ' - ' . _('Unknown field') . ': ' . $buffer, 'warning');
+                                        $this->addStatusMessage($pName.' - '._('Unknown field').': '.$buffer,
+                                            'warning');
                                     }
                                     break;
                                 }
@@ -204,12 +222,16 @@ class Repository extends \Ease\SQL\Engine {
                         echo '';
                         break;
                     case 'Filename':
-                        $fpparts = explode('/', $value);
-                        $distro = $fpparts[1];
-                        $section = $fpparts[2];
-                        $origFile = $this->poolDir . '/' . $distro . '/' . ($section == 'main') ? '' : $section . '/' . $pName;
-                        $packages[$pName]['fileMtime'] = file_exists($origFile) ? filemtime($origFile) : null;
-                        $packages[$pName]['Existing'] = file_exists($origFile) ? 1 : 0;
+                        $fpparts                                      = explode('/',
+                            $value);
+                        $distro                                       = $fpparts[1];
+                        $section                                      = $fpparts[2];
+                        $origFile                                     = $this->poolDir.'/'.$distro.'/'.($section
+                            == 'main') ? '' : $section.'/'.$pName;
+                        $packages[$pName]['fileMtime']                = file_exists($origFile)
+                                ? filemtime($origFile) : null;
+                        $packages[$pName]['Existing']                 = file_exists($origFile)
+                                ? 1 : 0;
                     default:
                         $packages[$pName][str_replace('-', '', $key)] = trim($value);
                         break;
@@ -227,7 +249,8 @@ class Repository extends \Ease\SQL\Engine {
     /**
      * Save data to Database
      */
-    public function saveAllToSQL() {
+    public function saveAllToSQL()
+    {
         $saved = [];
         foreach ($this->packages as $dist => $suites) {
 
@@ -238,7 +261,7 @@ class Repository extends \Ease\SQL\Engine {
                     foreach ($packages as $packageData) {
 
                         $packageData['Distribution'] = $dist;
-                        $packageData['Suite'] = $suite;
+                        $packageData['Suite']        = $suite;
                         $packageData['Architecture'] = $arch;
                         if (array_key_exists('fileMtime', $packageData) && $packageData['fileMtime']) {
                             $packageData['fileMtime'] = (New \DateTime())->setTimestamp($packageData['fileMtime'])->format('Y-m-d H:i:s');
@@ -248,14 +271,20 @@ class Repository extends \Ease\SQL\Engine {
 
                         unset($packageData['Build-Ids']);
 
-                        if (array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL(['id'], ['Filename' => $packageData['Filename']]))) {
+                        if (array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL([
+                                    'id'],
+                                    ['Filename' => $packageData['Filename']]))) {
 
-                            if (file_exists($this->repoDir . '/' . $packageData['Filename'])) {
+                            if (file_exists($this->repoDir.'/'.$packageData['Filename'])) {
                                 $this->setMyKey(null);
                                 if ($this->dbsync($this->onlyKnownColumns($packageData))) {
                                     $this->indexPackageContents($packageData);
                                     $saved[] = $packageData['Name'];
                                 }
+                            } else {
+                                $this->addStatusMessage(sprintf(_('File %s not found'),
+                                        $this->repoDir.'/'.$packageData['Filename']),
+                                    'warning');
                             }
                         } else {
                             
@@ -264,25 +293,29 @@ class Repository extends \Ease\SQL\Engine {
                 }
             }
         }
-        $this->addStatusMessage((empty($saved) ? 'none' : count($saved)) . ' packages saved: ' . implode(',', $saved), empty($saved) ? 'warning' : 'success' );
+        $this->addStatusMessage((empty($saved) ? 'none' : count($saved)).' packages saved: '.implode(',',
+                $saved), empty($saved) ? 'warning' : 'success' );
     }
 
     /**
      * Check wether the package exist on the disk
      */
-    public function updatePresenceStatus() {
+    public function updatePresenceStatus()
+    {
         foreach ($this->getColumnsFromSQL(['id', 'Filename', 'Existing']) as $pack) {
-            $presence = file_exists($this->repoDir . '/' . $pack['Filename']);
+            $presence = file_exists($this->repoDir.'/'.$pack['Filename']);
             if ($presence != $pack['Existing']) {
-                $this->updateToSQL(['id' => $pack['id'], 'updated' => date('Y-m-d H:i:s'), 'Existing' => $presence]);
-                $this->addStatusMessage($pack['Filename'] . ' presence changed');
+                $this->updateToSQL(['id' => $pack['id'], 'updated' => date('Y-m-d H:i:s'),
+                    'Existing' => $presence]);
+                $this->addStatusMessage($pack['Filename'].' presence changed');
             }
         }
     }
 
-    public function indexPackageContents($packageData) {
+    public function indexPackageContents($packageData)
+    {
         $contentor = new Files();
-        $contentor->indexPackageContents($this->getMyKey(), $this->repoDir . '/' . $packageData['Filename']);
+        $contentor->indexPackageContents($this->getMyKey(),
+            $this->repoDir.'/'.$packageData['Filename']);
     }
-
 }
