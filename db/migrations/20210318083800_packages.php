@@ -68,7 +68,6 @@ final class Packages extends AbstractMigration {
                 ->addIndex(['Depends'], ['type' => 'fulltext'])
                 ->addIndex(['Conflicts'])
                 ->addIndex(['Version'])
-                ->addIndex(['Depends'])
                 ->addIndex(['Description'], ['type' => 'fulltext'])
                 ->addIndex(['LongDescription'], ['type' => 'fulltext'])
                 ->addIndex(['Maintainer'], ['type' => 'fulltext'])
