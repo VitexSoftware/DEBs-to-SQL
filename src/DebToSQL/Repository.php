@@ -1,8 +1,9 @@
 <?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Debian package and its contents SQL indexer
+ *
+ * @author Vítězslav Dvořák <info@vitexsoftware.cz>
+ * @copyright  2021-2022 Vitex Software
  */
 
 namespace DebToSQL;
@@ -14,15 +15,35 @@ namespace DebToSQL;
  */
 class Repository extends \Ease\SQL\Engine
 {
-    public $dists   = [];
+    public $dists = [];
     public $repoDir = '';
-    private $archs  = [];
+    private $archs = [];
     public $myTable = 'packages';
+    private $skiplist;
+    private $poolDir;
+    private $suites;
 
+    /**
+     *
+     * @var array of architectures
+     */
+    private $arch = [];
+
+    /**
+     *
+     * @var array of packages
+     */
+    public $packages;
+
+    /**
+     *
+     * @param array $skiplist
+     */
     public function __construct(array $skiplist = []) /* : \DirectoryIterator */
     {
         $this->repoDir = \Ease\Functions::cfg('REPO_DIR');
         $this->poolDir = $this->repoDir.'pool/';
+        $this->skiplist = $skiplist;
         foreach (new \DirectoryIterator($this->repoDir.'dists/') as $fileInfo) {
             if ($fileInfo->isDot()) {
                 continue;
@@ -52,6 +73,8 @@ class Repository extends \Ease\SQL\Engine
      * Search for Suites in Distribution
      * 
      * @param string $distName
+     *
+     * @return array list of architectures found
      */
     public function parseDist($distName)
     {
@@ -59,8 +82,10 @@ class Repository extends \Ease\SQL\Engine
         $suites = $this->parseSuites($distName);
 
         foreach (array_keys($suites) as $suite) {
-            $this->archs = $this->parseArchs($distName, $suite);
+            $this->archs = array_merge($this->archs,
+                $this->parseArchs($distName, $suite));
         }
+        return array_keys($this->archs);
     }
 
     /**
@@ -85,7 +110,7 @@ class Repository extends \Ease\SQL\Engine
             if (!$fileInfo->isDir()) {
                 continue;
             }
-            $suite                           = $fileInfo->getFilename();
+            $suite = $fileInfo->getFilename();
             $this->addStatusMessage($distName.': suite found: '.$suite);
             $this->suites[$distName][$suite] = $this->dists[$distName].'/'.$suite;
         }
@@ -180,8 +205,8 @@ class Repository extends \Ease\SQL\Engine
     public function readpackages($pkgFile)
     {
         $packages = [];
-        $pName    = null;
-        $handle   = fopen($pkgFile, "r");
+        $pName = null;
+        $handle = fopen($pkgFile, "r");
         $position = 0;
         if ($handle) {
             while (($buffer = fgets($handle, 4096)) !== false) {
@@ -191,15 +216,14 @@ class Repository extends \Ease\SQL\Engine
                 list( $key, $value) = explode(': ', $buffer);
                 switch ($key) {
                     case 'Package':
-                        $pName                               = trim($value);
+                        $pName = trim($value);
                         $position++;
-                        $packages[$pName]['fileMtime']       = time();
+                        $packages[$pName]['fileMtime'] = time();
                         break;
                     case 'Description':
-                        $packages[$pName][$key]              = trim($value);
+                        $packages[$pName][$key] = trim($value);
                         $packages[$pName]['LongDescription'] = '';
-                        while (($buffer                              = fgets($handle,
-                        4096)) !== false) {
+                        while (($buffer = fgets($handle, 4096)) !== false) {
                             if (trim($buffer)) {
                                 if ($buffer[0] == ' ') {
                                     $packages[$pName]['LongDescription'] .= trim($buffer);
@@ -222,16 +246,15 @@ class Repository extends \Ease\SQL\Engine
                         echo '';
                         break;
                     case 'Filename':
-                        $fpparts                                      = explode('/',
-                            $value);
-                        $distro                                       = $fpparts[1];
-                        $section                                      = $fpparts[2];
-                        $origFile                                     = $this->poolDir.'/'.$distro.'/'.($section
-                            == 'main') ? '' : $section.'/'.$pName;
-                        $packages[$pName]['fileMtime']                = file_exists($origFile)
-                                ? filemtime($origFile) : null;
-                        $packages[$pName]['Existing']                 = file_exists($origFile)
-                                ? 1 : 0;
+                        $fpparts = explode('/', $value);
+                        $distro = $fpparts[1];
+                        $section = $fpparts[2];
+                        $origFile = $this->poolDir.'/'.$distro.'/'.($section == 'main')
+                                ? '' : $section.'/'.$pName;
+                        $packages[$pName]['fileMtime'] = file_exists($origFile) ? filemtime($origFile)
+                                : null;
+                        $packages[$pName]['Existing'] = file_exists($origFile) ? 1
+                                : 0;
                     default:
                         $packages[$pName][str_replace('-', '', $key)] = trim($value);
                         break;
@@ -261,7 +284,7 @@ class Repository extends \Ease\SQL\Engine
                     foreach ($packages as $packageData) {
 
                         $packageData['Distribution'] = $dist;
-                        $packageData['Suite']        = $suite;
+                        $packageData['Suite'] = $suite;
                         $packageData['Architecture'] = $arch;
                         if (array_key_exists('fileMtime', $packageData) && $packageData['fileMtime']) {
                             $packageData['fileMtime'] = (New \DateTime())->setTimestamp($packageData['fileMtime'])->format('Y-m-d H:i:s');
@@ -312,6 +335,10 @@ class Repository extends \Ease\SQL\Engine
         }
     }
 
+    /**
+     *
+     * @param array $packageData
+     */
     public function indexPackageContents($packageData)
     {
         $contentor = new Files();

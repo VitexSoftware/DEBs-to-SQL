@@ -16,7 +16,10 @@
         "vitexsoftware/ease-fluentpdo": "^1.0"
     },
     "require-dev": {
-        "robmorgan/phinx": "^0.12.6"
+        "robmorgan/phinx": "*",
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "squizlabs/php_codesniffer": "*"
     },
 
     "autoload": {
