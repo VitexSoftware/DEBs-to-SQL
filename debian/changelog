@@ -1,8 +1,12 @@
-debs2sql (0.3) UNRELEASED; urgency=low
+debs2sql (0.4) UNRELEASED; urgency=low
 
+  [ CyberVitexus ]
   * Package contents indexer added
 
- -- CyberVitexus <>  Fri, 19 Mar 2021 15:25:40 +0100
+  [ vitex ]
+  * web added
+
+ -- vitex <info@vitexsoftware.cz>  Sat, 04 Nov 2023 08:59:56 +0100
 
 debs2sql (0.2) UNRELEASED; urgency=low
 
