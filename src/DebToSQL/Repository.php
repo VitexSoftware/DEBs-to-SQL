@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Debian package and its contents SQL indexer
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2021-2022 Vitex Software
+ * @copyright  2021-2023 Vitex Software
  */
 
 namespace DebToSQL;
@@ -42,19 +43,21 @@ class Repository extends \Ease\SQL\Engine
     public function __construct(array $skiplist = []) /* : \DirectoryIterator */
     {
         $this->repoDir = \Ease\Functions::cfg('REPO_DIR');
-        $this->poolDir = $this->repoDir.'pool/';
+        $this->poolDir = $this->repoDir . 'pool/';
         $this->skiplist = $skiplist;
-        foreach (new \DirectoryIterator($this->repoDir.'dists/') as $fileInfo) {
-            if ($fileInfo->isDot()) {
-                continue;
+        if (is_dir($this->repoDir . 'dists/')) {
+            foreach (new \DirectoryIterator($this->repoDir . 'dists/') as $fileInfo) {
+                if ($fileInfo->isDot()) {
+                    continue;
+                }
+                if (!$fileInfo->isReadable()) {
+                    continue;
+                }
+                if (strstr($fileInfo->getFilename(), '-')) {
+                    continue;
+                }
+                $this->dists[$fileInfo->getFilename()] = $this->repoDir . 'dists/' . $fileInfo->getFilename();
             }
-            if (!$fileInfo->isReadable()) {
-                continue;
-            }
-            if (strstr($fileInfo->getFilename(), '-')) {
-                continue;
-            }
-            $this->dists[$fileInfo->getFilename()] = $this->repoDir.'dists/'.$fileInfo->getFilename();
         }
     }
 
@@ -63,7 +66,7 @@ class Repository extends \Ease\SQL\Engine
      */
     public function parseDists()
     {
-        $this->logBanner(\Ease\Shared::appName(), 'in: '.$this->repoDir);
+        $this->logBanner(\Ease\Shared::appName(), 'in: ' . $this->repoDir);
         foreach (array_keys($this->dists) as $dist) {
             $this->parseDist($dist);
         }
@@ -71,28 +74,29 @@ class Repository extends \Ease\SQL\Engine
 
     /**
      * Search for Suites in Distribution
-     * 
+     *
      * @param string $distName
      *
      * @return array list of architectures found
      */
     public function parseDist($distName)
     {
-        $this->addStatusMessage(_('Parsing distro').': '.$distName);
+        $this->addStatusMessage(_('Parsing distro') . ': ' . $distName);
         $suites = $this->parseSuites($distName);
-
         foreach (array_keys($suites) as $suite) {
-            $this->archs = array_merge($this->archs,
-                $this->parseArchs($distName, $suite));
+            $this->archs = array_merge(
+                $this->archs,
+                $this->parseArchs($distName, $suite)
+            );
         }
         return array_keys($this->archs);
     }
 
     /**
      * Parse suites in given Distribution
-     * 
+     *
      * @param string $distName
-     * 
+     *
      * @return array
      */
     public function parseSuites($distName)
@@ -111,23 +115,23 @@ class Repository extends \Ease\SQL\Engine
                 continue;
             }
             $suite = $fileInfo->getFilename();
-            $this->addStatusMessage($distName.': suite found: '.$suite);
-            $this->suites[$distName][$suite] = $this->dists[$distName].'/'.$suite;
+            $this->addStatusMessage($distName . ': suite found: ' . $suite);
+            $this->suites[$distName][$suite] = $this->dists[$distName] . '/' . $suite;
         }
         return $this->suites[$distName];
     }
 
     /**
      * Parse Architectures in dist/suite
-     * 
+     *
      * @param string $distName
      * @param string $suite
-     * 
+     *
      * @return array archs found
      */
     public function parseArchs($distName, $suite)
     {
-        foreach (new \DirectoryIterator($this->dists[$distName].'/'.$suite) as $fileInfo) {
+        foreach (new \DirectoryIterator($this->dists[$distName] . '/' . $suite) as $fileInfo) {
             if ($fileInfo->isDot()) {
                 continue;
             }
@@ -139,22 +143,25 @@ class Repository extends \Ease\SQL\Engine
             }
 
             $arch = $fileInfo->getFilename();
-
-            $this->addStatusMessage('Architecture found: '.$distName.'/'.$suite.': '.$arch);
-            $this->arch[$distName][$suite][$arch] = $this->dists[$distName].'/'.$suite.'/'.$arch;
-
-            $packages = $this->arch[$distName][$suite][$arch].'/Packages';
+            $this->addStatusMessage('Architecture found: ' . $distName . '/' . $suite . ': ' . $arch);
+            $this->arch[$distName][$suite][$arch] = $this->dists[$distName] . '/' . $suite . '/' . $arch;
+            $packages = $this->arch[$distName][$suite][$arch] . '/Packages';
             if (file_exists($packages)) {
-
-                if (!empty(\Ease\Functions::cfg('SKIP')) && strstr($packages,
-                        \Ease\Functions::cfg('SKIP'))) {
-                    $this->addStatusMessage('Private repo '.$packages.' skipped');
+                if (
+                    !empty(\Ease\Functions::cfg('SKIP')) && strstr(
+                        $packages,
+                        \Ease\Functions::cfg('SKIP')
+                    )
+                ) {
+                    $this->addStatusMessage('Private repo ' . $packages . ' skipped');
                     continue;
                 }
 
                 $this->packages[$distName][$suite][$arch] = $this->readpackages($packages);
-                $this->addStatusMessage('Found '.count($this->packages[$distName][$suite][$arch]).' packages in '.$distName.'/'.$suite.'/'.$arch,
-                    'success');
+                $this->addStatusMessage(
+                    'Found ' . count($this->packages[$distName][$suite][$arch]) . ' packages in ' . $distName . '/' . $suite . '/' . $arch,
+                    'success'
+                );
             }
         }
         return $this->arch[$distName][$suite];
@@ -162,16 +169,15 @@ class Repository extends \Ease\SQL\Engine
 
     /**
      * Filer only knonw fields
-     * 
+     *
      * @param array $dataRaw
-     * 
+     *
      * @return array
      */
     public function onlyKnownColumns($dataRaw)
     {
         $dataOriginal = $dataRaw;
         $dataFiltered = [];
-
         $knownColumns = ['Name', 'Package', 'Appname', 'Essential', 'Vendor', 'License',
             'Distribution', 'Suite', 'Source', 'Version', 'Architecture', 'MultiArch',
             'Maintainer', 'InstalledSize', 'Depends'
@@ -187,19 +193,20 @@ class Repository extends \Ease\SQL\Engine
 
         $originalKeys = array_keys($dataOriginal);
         $filteredKeys = array_keys($dataFiltered);
-
         if (count($originalKeys) != count($filteredKeys)) {
-            $this->addStatusMessage('Unknown column: '.implode(',',
-                    array_diff($originalKeys, $filteredKeys)), 'warning');
+            $this->addStatusMessage('Unknown column: ' . implode(
+                ',',
+                array_diff($originalKeys, $filteredKeys)
+            ), 'warning');
         }
 
         return $dataFiltered;
     }
 
     /**
-     * 
+     *
      * @param type $pkgFile
-     * 
+     *
      * @return type
      */
     public function readpackages($pkgFile)
@@ -229,13 +236,20 @@ class Repository extends \Ease\SQL\Engine
                                     $packages[$pName]['LongDescription'] .= trim($buffer);
                                 } else {
                                     if (strstr($buffer, ':')) {
-                                        list($key, $value) = preg_split('/:/',
-                                            $buffer, 2);
-                                        $packages[$pName][$key] = trim($value,
-                                            " \t\n\r\0\x0B'\"");
+                                        list($key, $value) = preg_split(
+                                            '/:/',
+                                            $buffer,
+                                            2
+                                        );
+                                        $packages[$pName][$key] = trim(
+                                            $value,
+                                            " \t\n\r\0\x0B'\""
+                                        );
                                     } else {
-                                        $this->addStatusMessage($pName.' - '._('Unknown field').': '.$buffer,
-                                            'warning');
+                                        $this->addStatusMessage(
+                                            $pName . ' - ' . _('Unknown field') . ': ' . $buffer,
+                                            'warning'
+                                        );
                                     }
                                     break;
                                 }
@@ -249,12 +263,9 @@ class Repository extends \Ease\SQL\Engine
                         $fpparts = explode('/', $value);
                         $distro = $fpparts[1];
                         $section = $fpparts[2];
-                        $origFile = $this->poolDir.'/'.$distro.'/'.($section == 'main')
-                                ? '' : $section.'/'.$pName;
-                        $packages[$pName]['fileMtime'] = file_exists($origFile) ? filemtime($origFile)
-                                : null;
-                        $packages[$pName]['Existing'] = file_exists($origFile) ? 1
-                                : 0;
+                        $origFile = $this->poolDir . '/' . $distro . '/' . ($section == 'main') ? '' : $section . '/' . $pName;
+                        $packages[$pName]['fileMtime'] = file_exists($origFile) ? filemtime($origFile) : null;
+                        $packages[$pName]['Existing'] = file_exists($origFile) ? 1 : 0;
                     default:
                         $packages[$pName][str_replace('-', '', $key)] = trim($value);
                         break;
@@ -276,48 +287,51 @@ class Repository extends \Ease\SQL\Engine
     {
         $saved = [];
         foreach ($this->packages as $dist => $suites) {
-
             foreach ($suites as $suite => $suiteData) {
-
                 foreach ($suiteData as $arch => $packages) {
-
                     foreach ($packages as $packageData) {
-
                         $packageData['Distribution'] = $dist;
                         $packageData['Suite'] = $suite;
                         $packageData['Architecture'] = $arch;
                         if (array_key_exists('fileMtime', $packageData) && $packageData['fileMtime']) {
-                            $packageData['fileMtime'] = (New \DateTime())->setTimestamp($packageData['fileMtime'])->format('Y-m-d H:i:s');
+                            $packageData['fileMtime'] = (new \DateTime())->setTimestamp($packageData['fileMtime'])->format('Y-m-d H:i:s');
                         } else {
                             unset($packageData['fileMtime']);
                         }
 
                         unset($packageData['Build-Ids']);
-
-                        if (array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL([
-                                    'id'],
-                                    ['Filename' => $packageData['Filename']]))) {
-
-                            if (file_exists($this->repoDir.'/'.$packageData['Filename'])) {
+                        if (
+                            array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL(
+                                [
+                                            'id'],
+                                ['Filename' => $packageData['Filename']]
+                            ))
+                        ) {
+                            if (file_exists($this->repoDir . '/' . $packageData['Filename'])) {
                                 $this->setMyKey(null);
                                 if ($this->dbsync($this->onlyKnownColumns($packageData))) {
                                     $this->indexPackageContents($packageData);
                                     $saved[] = $packageData['Name'];
                                 }
                             } else {
-                                $this->addStatusMessage(sprintf(_('File %s not found'),
-                                        $this->repoDir.'/'.$packageData['Filename']),
-                                    'warning');
+                                $this->addStatusMessage(
+                                    sprintf(
+                                        _('File %s not found'),
+                                        $this->repoDir . '/' . $packageData['Filename']
+                                    ),
+                                    'warning'
+                                );
                             }
                         } else {
-                            
                         }
                     }
                 }
             }
         }
-        $this->addStatusMessage((empty($saved) ? 'none' : count($saved)).' packages saved: '.implode(',',
-                $saved), empty($saved) ? 'warning' : 'success' );
+        $this->addStatusMessage((empty($saved) ? 'none' : count($saved)) . ' packages saved: ' . implode(
+            ',',
+            $saved
+        ), empty($saved) ? 'warning' : 'success');
     }
 
     /**
@@ -326,11 +340,11 @@ class Repository extends \Ease\SQL\Engine
     public function updatePresenceStatus()
     {
         foreach ($this->getColumnsFromSQL(['id', 'Filename', 'Existing']) as $pack) {
-            $presence = file_exists($this->repoDir.'/'.$pack['Filename']);
+            $presence = file_exists($this->repoDir . '/' . $pack['Filename']);
             if ($presence != $pack['Existing']) {
                 $this->updateToSQL(['id' => $pack['id'], 'updated' => date('Y-m-d H:i:s'),
                     'Existing' => $presence]);
-                $this->addStatusMessage($pack['Filename'].' presence changed');
+                $this->addStatusMessage($pack['Filename'] . ' presence changed');
             }
         }
     }
@@ -342,7 +356,9 @@ class Repository extends \Ease\SQL\Engine
     public function indexPackageContents($packageData)
     {
         $contentor = new Files();
-        $contentor->indexPackageContents($this->getMyKey(),
-            $this->repoDir.'/'.$packageData['Filename']);
+        $contentor->indexPackageContents(
+            $this->getMyKey(),
+            $this->repoDir . '/' . $packageData['Filename']
+        );
     }
 }

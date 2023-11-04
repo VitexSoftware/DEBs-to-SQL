@@ -6,6 +6,7 @@
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  * @copyright  2021 Vitex Software
  */
+
 require_once '../vendor/autoload.php';
 
 $shared = \Ease\Shared::instanced();

@@ -13,7 +13,8 @@
     "minimum-stability": "dev",
     "require": {
         "vitexsoftware/ease-core": "^1.12",
-        "vitexsoftware/ease-fluentpdo": "^1.0"
+        "vitexsoftware/ease-fluentpdo": "^1.0",
+        "vitexsoftware/ease-twbootstrap5": "dev-main"
     },
     "require-dev": {
         "robmorgan/phinx": "*",

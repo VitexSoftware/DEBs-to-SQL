@@ -14,8 +14,8 @@ namespace DebToSQL;
  *
  * @author vitex
  */
-class Files extends \Ease\SQL\Engine {
-
+class Files extends \Ease\SQL\Engine
+{
     public $myTable = 'files';
 
     /**
@@ -23,7 +23,8 @@ class Files extends \Ease\SQL\Engine {
      * @param int    $packageId
      * @param string $packagePath
      */
-    public function indexPackageContents($packageId, $packagePath) {
+    public function indexPackageContents($packageId, $packagePath)
+    {
         foreach (self::getPackageContents($packagePath) as $path => $size) {
             $this->insertToSQL(['packages_id' => $packageId, 'path' => $path, 'size' => $size]);
         }
@@ -33,10 +34,11 @@ class Files extends \Ease\SQL\Engine {
      * obtaing package contents
      *
      * @param string $path deb file
-     * 
+     *
      * @return array
      */
-    public static function getPackageContents($path) {
+    public static function getPackageContents($path)
+    {
         $packageFiles = [];
         $fp = popen('/usr/bin/dpkg -c ' . $path, 'r');
         while (!feof($fp)) {
@@ -48,5 +50,4 @@ class Files extends \Ease\SQL\Engine {
         pclose($fp);
         return $packageFiles;
     }
-
 }
