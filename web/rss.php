@@ -13,7 +13,7 @@ require_once '../vendor/autoload.php';
 
 use SimpleXMLElement;
 
-$packages = new Ui\NewPackages(); // [['title'=>'n/a','description'=>'','icon'=>'','date'=>'']];
+$packages = new Ui\NewPackages(\Ease\Shared::cfg('RSS_ITEMS',20)); // [['title'=>'n/a','description'=>'','icon'=>'','date'=>'']];
 header("Content-Type: application/xml; charset=UTF-8");
 #header("Content-Type: application/rss+xml; charset=UTF-8");
 
