@@ -4,17 +4,19 @@
  * Debian paggage and its contents SQL indexer
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2021 Vitex Software
+ * @copyright  2021-2023 Vitex Software
  */
 
 require_once '../vendor/autoload.php';
 
-$shared = \Ease\Shared::instanced();
-if (file_exists('../.env')) {
-    $shared->loadConfig('../.env', true);
-}
-
 define('APP_NAME', 'debs2sql');
+\Ease\Shared::init(['DB_CONNECTION',
+'DB_HOST',
+'DB_PORT',
+'DB_DATABASE',
+'DB_USERNAME',
+'DB_PASSWORD',
+'REPO_DIR'], '../.env');
 
 $repositor = new \DebToSQL\Repository();
 

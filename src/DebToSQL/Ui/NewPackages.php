@@ -83,14 +83,13 @@ class NewPackages extends \Ease\Html\SpanTag
     }
 
     /**
+     * New Packages handler
      *
-     * @param mixed $content
+     * @param int   $howmuch
      * @param array $properties
      */
     public function __construct($howmuch = 10, $properties = [])
     {
-
-
         $packager = new \DebToSQL\Packages($howmuch);
 
         $this->packagesByTime = $packager->listingQuery()->limit($howmuch)->where('Existing', 1)->groupBy('Name')->orderBy('updated,created DESC')->fetchAll();
