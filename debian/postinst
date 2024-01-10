@@ -4,12 +4,15 @@ set -e
 
 . /usr/share/debconf/confmodule
 
+cat /usr/lib/debs2sql/composer.json
 
+composer -vvv -d /usr/lib/debs2sql install
+
+composer-debian debs2sql
 
 
 case "$1" in
     configure)
-	composer-debian debs2sql
         echo "edit /etc/debs2sql/.env and run debs2sql-phinx to prepare database";
     ;;
 
