@@ -9,3 +9,4 @@ composer.lock
 /debian/debs2sql.substvars
 /debian/files
 /.phpunit.result.cache
+/debian/.debhelper/

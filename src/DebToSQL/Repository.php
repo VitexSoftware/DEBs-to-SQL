@@ -42,6 +42,7 @@ class Repository extends \Ease\SQL\Engine
      */
     public function __construct(array $skiplist = []) /* : \DirectoryIterator */
     {
+        parent::__construct();
         $this->repoDir = \Ease\Functions::cfg('REPO_DIR');
         $this->poolDir = $this->repoDir . 'pool/';
         $this->skiplist = $skiplist;
