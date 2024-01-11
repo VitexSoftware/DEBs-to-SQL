@@ -4,9 +4,9 @@ set -e
 
 . /usr/share/debconf/confmodule
 
-cat /usr/lib/debs2sql/composer.json
+#cat /usr/lib/debs2sql/composer.json
 
-composer -vvv -d /usr/lib/debs2sql install
+#composer -vvv -d /usr/lib/debs2sql install
 
 composer-debian debs2sql
 
