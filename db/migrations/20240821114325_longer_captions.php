@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Phinx\Migration\AbstractMigration;
 
-final class PackageContents extends AbstractMigration
+final class LongerCaptions extends AbstractMigration
 {
     /**
      * Change Method.
@@ -19,13 +19,8 @@ final class PackageContents extends AbstractMigration
      */
     public function change(): void
     {
-        $users = $this->table('files');
-        $users->addColumn('packages_id', 'integer')
-                ->addColumn('path', 'string', ['limit' => 4084])
-                ->addColumn('size', 'integer', ['limit' => 40])
-                ->addColumn('updated', 'datetime', ['null' => true])
-                ->addForeignKey('packages_id', 'packages', 'id')
-                ->create();
+        $table = $this->table('packages');
+        $table->changeColumn('Recommends', 'string', ['limit' => 1000])
+                ->save();
     }
-
 }

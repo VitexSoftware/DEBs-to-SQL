@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use Phinx\Migration\AbstractMigration;
 
-final class Packages extends AbstractMigration {
-
+final class Packages extends AbstractMigration
+{
     /**
      * Change Method.
      *
@@ -17,7 +17,8 @@ final class Packages extends AbstractMigration {
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change(): void {
+    public function change(): void
+    {
         // create the table
         $table = $this->table('packages');
         $table->addColumn('Name', 'string', ['null' => false])
