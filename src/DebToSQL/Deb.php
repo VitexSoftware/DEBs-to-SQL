@@ -15,7 +15,7 @@ namespace DebToSQL;
  */
 class Deb extends \Ease\Brick
 {
-    static function getIcon($package)
+    public static function getIcon($package)
     {
         $icon = 'img/deb/' . $package . '.svg';
         if (!file_exists($icon)) {
@@ -27,7 +27,7 @@ class Deb extends \Ease\Brick
         return $icon;
     }
 
-    static function getIconUrl($package)
+    public static function getIconUrl($package)
     {
         return dirname(ui\WebPage::getUri()) . self::getIcon($package);
     }

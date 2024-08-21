@@ -1,7 +1,7 @@
 /vendor/
 composer.lock
 /debian/debs2sql/
-
+/.php-cs-fixer.cache
 
 /nbproject/
 /debian/debhelper-build-stamp

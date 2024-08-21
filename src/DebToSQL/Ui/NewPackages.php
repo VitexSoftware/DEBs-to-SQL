@@ -42,7 +42,7 @@ class NewPackages extends \Ease\Html\SpanTag
                 if (!strstr($buffer, ':')) {
                     continue;
                 }
-                list( $key, $value ) = explode(':', $buffer);
+                list($key, $value) = explode(':', $buffer);
                 switch ($key) {
                     case 'Package':
                         $pName = trim($value);
@@ -56,7 +56,7 @@ class NewPackages extends \Ease\Html\SpanTag
                             if ($buffer[0] == ' ') {
                                 $packages[$pName]['LongDescription'] .= trim($buffer);
                             } else {
-                                list( $key, $value ) = explode(':', $buffer);
+                                list($key, $value) = explode(':', $buffer);
                                 $packages[$pName][$key] = trim($value);
                                 break;
                             }
@@ -68,6 +68,7 @@ class NewPackages extends \Ease\Html\SpanTag
                         $section = $fpparts[2];
                         $origFile = $this->libdir . '/' . $distro . '/' . ($section == 'main') ? '' : $section . '/' . $pName;
                         $packages[$pName]['fileMtime'] = filemtime($origFile);
+                        // no break
                     default:
                         $packages[$pName][$key] = trim($value);
                         break;
@@ -94,14 +95,14 @@ class NewPackages extends \Ease\Html\SpanTag
 
         $this->packagesByTime = $packager->listingQuery()->limit($howmuch)->where('Existing', 1)->groupBy('Name')->orderBy('updated,created DESC')->fetchAll();
 
-//        $this->getPdo([
-//            'dbType' => constant('STATS_TYPE'),
-//            'server' => constant('STATS_SERVER'),
-//            'username' => constant('STATS_USERNAME'),
-//            'password' => constant('STATS_PASSWORD'),
-//            'database' => constant('STATS_DATABASE'),
-//            'port' => constant('STATS_PORT')
-//        ]);
+        //        $this->getPdo([
+        //            'dbType' => constant('STATS_TYPE'),
+        //            'server' => constant('STATS_SERVER'),
+        //            'username' => constant('STATS_USERNAME'),
+        //            'password' => constant('STATS_PASSWORD'),
+        //            'database' => constant('STATS_DATABASE'),
+        //            'port' => constant('STATS_PORT')
+        //        ]);
 
         parent::__construct(new \Ease\Html\H1Tag(
             _('Fresh Packages'),
@@ -146,7 +147,7 @@ class NewPackages extends \Ease\Html\SpanTag
         $packageCard = new \Ease\TWB4\Card(new \Ease\Html\DivTag(new \Ease\Html\H5Tag($pName . ' ' . $pProps['Version']), ['class' => 'card-header']), ['class' => 'text-black bg-warning']);
         $packageCard->addItem($cardBody);
 
-     //   $packageCard->addItem(new \Ease\Html\DivTag('<small>' . _('Installed') . ': ' . $counts['installs'] . '&nbsp&nbsp;' . _('Downloaded') . ': ' . $counts['downloads'] . '</small>', ['class' => 'card-footer']));
+        //   $packageCard->addItem(new \Ease\Html\DivTag('<small>' . _('Installed') . ': ' . $counts['installs'] . '&nbsp&nbsp;' . _('Downloaded') . ': ' . $counts['downloads'] . '</small>', ['class' => 'card-footer']));
 
         return $packageCard;
     }
@@ -160,7 +161,7 @@ class NewPackages extends \Ease\Html\SpanTag
     {
         $rssData = [];
         foreach ($this->packagesByTime as $packageInfo) {
-            if (!is_null($filter) && (!strstr($packageInfo['Name'], $filter) && !strstr($packageInfo['Description'], $filter) )) {
+            if (!is_null($filter) && (!strstr($packageInfo['Name'], $filter) && !strstr($packageInfo['Description'], $filter))) {
                 continue;
             }
 

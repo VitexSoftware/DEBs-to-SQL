@@ -24,10 +24,10 @@ $done = 0;
 foreach ($repositor->listingQuery()->select(['id', 'Filename'], true) as $package) {
     $path = $repositor->repoDir . '/' . $package['Filename'];
     if (
-            $filer->listingQuery()->select(['id'], true)->where(
-                'packages_id',
-                $package['id']
-            )->count() == 0
+        $filer->listingQuery()->select(['id'], true)->where(
+            'packages_id',
+            $package['id']
+        )->count() == 0
     ) {
         $filer->indexPackageContents($package['id'], $path);
         $filer->addStatusMessage($done++ . $path, 'success');

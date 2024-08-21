@@ -221,7 +221,7 @@ class Repository extends \Ease\SQL\Engine
                 if (!strstr($buffer, ': ')) {
                     continue;
                 }
-                list( $key, $value) = explode(': ', $buffer);
+                list($key, $value) = explode(': ', $buffer);
                 switch ($key) {
                     case 'Package':
                         $pName = trim($value);
@@ -267,6 +267,7 @@ class Repository extends \Ease\SQL\Engine
                         $origFile = $this->poolDir . '/' . $distro . '/' . ($section == 'main') ? '' : $section . '/' . $pName;
                         $packages[$pName]['fileMtime'] = file_exists($origFile) ? filemtime($origFile) : null;
                         $packages[$pName]['Existing'] = file_exists($origFile) ? 1 : 0;
+                        // no break
                     default:
                         $packages[$pName][str_replace('-', '', $key)] = trim($value);
                         break;
