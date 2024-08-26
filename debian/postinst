@@ -9,7 +9,7 @@ set -e
 #composer -vvv -d /usr/lib/debs2sql install
 
 composer-debian debs2sql
-
+#phinx migrate -c /usr/lib/debs2sql/phinx-adapter.php
 
 case "$1" in
     configure)

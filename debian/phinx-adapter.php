@@ -52,13 +52,12 @@ $cfg = [
     ],
     'environments' =>
     [
-        'default_database' => 'development',
+        'default_environment' => 'development',
         'development' => [
             'adapter' => \Ease\Functions::cfg('DB_CONNECTION'),
             'name' => $engine->database,
             'connection' => $engine->getPdo($sqlOptions)
         ],
-        'default_database' => 'production',
         'production' => [
             'adapter' => \Ease\Functions::cfg('DB_CONNECTION'),
             'name' => $engine->database,
