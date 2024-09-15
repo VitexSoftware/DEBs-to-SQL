@@ -19,7 +19,7 @@ class Repository extends \Ease\SQL\Engine
     public $dists = [];
     public $repoDir = '';
     private $archs = [];
-    public $myTable = 'packages';
+    public string $myTable = 'packages';
     private $skiplist;
     private $poolDir;
     private $suites;
