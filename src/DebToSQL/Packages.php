@@ -1,38 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * VitexSoftware Homepage - News Handler
+ * This file is part of the DEBs-to-SQL package
  *
- * @author Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2015-2023 Vitex Software
+ * https://github.com/VitexSoftware/DEBs-to-SQL
+ *
+ * (c) Vítězslav Dvořák <http://vitexsoftware.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace DebToSQL;
 
 /**
- * Description of News
+ * Description of News.
  *
  * @author vitex
  */
 class Packages extends \Ease\SQL\Engine
 {
     public $myKeyColumn = 'id';
-    public $myTable     = 'packages';
-    /**
-     * Where to look for record's name
-     * @var string
-     */
-    public $nameColumn  = 'Name';
+    public string $myTable = 'packages';
 
     /**
-     * Sloupeček obsahující datum vložení záznamu do shopu
-     * @var string
+     * Where to look for record's name.
      */
-    public $myCreateColumn = 'created';
+    public string $nameColumn = 'Name';
 
     /**
-     * Slopecek obsahujici datum poslení modifikace záznamu do shopu
-     * @var string
+     * Column containing the date the record was added to the shop.
      */
-    public $myLastModifiedColumn = 'updated';
+    public string $myCreateColumn = 'created';
+
+    /**
+     * Column containing the date of the last modification of the record in the shop.
+     */
+    public string $myLastModifiedColumn = 'updated';
 }

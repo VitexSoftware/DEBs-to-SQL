@@ -1,22 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * Debian paggage and its contents SQL indexer
+ * This file is part of the DEBs-to-SQL package
  *
- * @author Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2021-2023 Vitex Software
+ * https://github.com/VitexSoftware/DEBs-to-SQL
+ *
+ * (c) Vítězslav Dvořák <http://vitexsoftware.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 require_once '../vendor/autoload.php';
 
-define('APP_NAME', 'debs2sql');
+\define('APP_NAME', 'debs2sql');
 \Ease\Shared::init(['DB_CONNECTION',
-'DB_HOST',
-'DB_PORT',
-'DB_DATABASE',
-'DB_USERNAME',
-'DB_PASSWORD',
-'REPO_DIR'], '../.env');
+    'DB_HOST',
+    'DB_PORT',
+    'DB_DATABASE',
+    'DB_USERNAME',
+    'DB_PASSWORD',
+    'REPO_DIR'], '../.env');
 
 $repositor = new \DebToSQL\Repository();
 

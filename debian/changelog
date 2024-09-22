@@ -1,4 +1,10 @@
-debs2sql (0.4) UNRELEASED; urgency=low
+debs2sql (0.5.0) UNRELEASED; urgency=medium
+
+  * Strict Types used
+
+ -- vitex <info@vitexsoftware.cz>  Mon, 23 Sep 2024 01:00:47 +0200
+
+debs2sql (0.4) unstable; urgency=low
 
   [ CyberVitexus ]
   * Package contents indexer added
@@ -6,7 +12,7 @@ debs2sql (0.4) UNRELEASED; urgency=low
   [ vitex ]
   * web added
 
- -- vitex <info@vitexsoftware.cz>  Sat, 04 Nov 2023 08:59:56 +0100
+ -- vitex <info@vitexsoftware.cz>  Mon, 23 Sep 2024 01:00:36 +0200
 
 debs2sql (0.2) UNRELEASED; urgency=low
 

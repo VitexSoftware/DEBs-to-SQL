@@ -20,13 +20,20 @@
         "robmorgan/phinx": "*",
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "squizlabs/php_codesniffer": "*"
+        "friendsofphp/php-cs-fixer": "^3.61",
+        "ergebnis/composer-normalize": "^2.43",
+        "ergebnis/php-cs-fixer-config": "^6.34"
     },
 
     "autoload": {
         "psr-4": {
             "DebToSQL\\": "src/DebToSQL/",
             "DebToSQL\\Ui\\": "src/DebToSQL/Ui"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
         }
     }
 }

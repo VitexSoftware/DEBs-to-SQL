@@ -1,8 +1,22 @@
 <?php
+
+declare(strict_types=1);
+
+/**
+ * This file is part of the DEBs-to-SQL package
+ *
+ * https://github.com/VitexSoftware/DEBs-to-SQL
+ *
+ * (c) Vítězslav Dvořák <http://vitexsoftware.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DebToSQL;
 
 /**
- * VitexSoftware - DEBs to SQL web interface
+ * VitexSoftware - DEBs to SQL web interface.
  *
  * @author     Vitex <vitex@hippy.cz>
  * @copyright  2023 Vitex@hippy.cz (G)
