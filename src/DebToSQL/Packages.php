@@ -26,11 +26,6 @@ class Packages extends \Ease\SQL\Engine
     public string $myTable = 'packages';
 
     /**
-     * Where to look for record's name.
-     */
-    public string $nameColumn = 'Name';
-
-    /**
      * Column containing the date the record was added to the shop.
      */
     public string $myCreateColumn = 'created';
@@ -39,4 +34,10 @@ class Packages extends \Ease\SQL\Engine
      * Column containing the date of the last modification of the record in the shop.
      */
     public string $myLastModifiedColumn = 'updated';
+    
+    public function __construct($identifier = null, $options = []) {
+        $this->nameColumn = 'Name';
+        parent::__construct($identifier, $options);
+    }
+    
 }
