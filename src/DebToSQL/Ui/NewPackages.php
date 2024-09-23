@@ -42,7 +42,7 @@ class NewPackages extends \Ease\Html\SpanTag
     {
         $packager = new \DebToSQL\Packages($howmuch);
 
-        $this->packagesByTime = $packager->listingQuery()->limit($howmuch)->where('Existing', 1)->groupBy('Name')->orderBy('updated,created DESC')->fetchAll();
+        $this->packagesByTime = $packager->listingQuery()->limit($howmuch)->where('Existing', 1)->groupBy('Name')->orderBy('updated DESC')->fetchAll();
 
         //        $this->getPdo([
         //            'dbType' => constant('STATS_TYPE'),
