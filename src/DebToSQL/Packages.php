@@ -23,7 +23,6 @@ namespace DebToSQL;
 class Packages extends \Ease\SQL\Engine
 {
     public $myKeyColumn = 'id';
-    public string $myTable = 'packages';
 
     /**
      * Column containing the date the record was added to the shop.
@@ -37,6 +36,7 @@ class Packages extends \Ease\SQL\Engine
     
     public function __construct($identifier = null, $options = []) {
         $this->nameColumn = 'Name';
+        $this->myTable = 'packages';
         parent::__construct($identifier, $options);
     }
     

@@ -22,8 +22,12 @@ namespace DebToSQL;
  */
 class Files extends \Ease\SQL\Engine
 {
-    public string $myTable = 'files';
 
+    public function __construct($identifier = null, $options = []) {
+        $this->myTable = 'files';
+        parent::__construct($identifier, $options);
+    }    
+    
     /**
      * @param int    $packageId
      * @param string $packagePath
@@ -36,16 +40,12 @@ class Files extends \Ease\SQL\Engine
     }
 
     /**
-     * obtaing package contents.
-     *
-     * @param string $path deb file
-     *
-     * @return array
+     * Obtaining package contents.
      */
-    public static function getPackageContents($path)
+    public static function getPackageContents(string $debFile): array
     {
         $packageFiles = [];
-        $fp = popen('/usr/bin/dpkg -c '.$path, 'r');
+        $fp = popen('/usr/bin/dpkg -c '.$debFile, 'r');
 
         while (!feof($fp)) {
             $lineData = preg_split('/[\s]+/', fgets($fp, 4096));

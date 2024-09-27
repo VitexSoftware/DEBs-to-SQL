@@ -24,7 +24,6 @@ class Repository extends \Ease\SQL\Engine
 {
     public $dists = [];
     public $repoDir = '';
-    public string $myTable = 'packages';
 
     /**
      * @var array of packages
@@ -42,6 +41,8 @@ class Repository extends \Ease\SQL\Engine
 
     public function __construct(array $skiplist = []) /* : \DirectoryIterator */
     {
+        $this->myTable = 'packages';
+        $this->setObjectName();
         parent::__construct();
         $this->repoDir = \Ease\Functions::cfg('REPO_DIR');
         $this->poolDir = $this->repoDir.'pool/';
