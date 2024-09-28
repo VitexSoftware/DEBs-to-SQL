@@ -48,10 +48,12 @@ class Files extends \Ease\SQL\Engine
         $fp = popen('/usr/bin/dpkg -c '.$debFile, 'r');
 
         while (!feof($fp)) {
-            $lineData = preg_split('/[\s]+/', fgets($fp, 4096));
-
-            if (\array_key_exists(2, $lineData)) {
-                $packageFiles[$lineData[5]] = $lineData[2];
+            $fragment = fgets($fp, 4096);
+            if(is_string($fragment)){
+                $lineData = preg_split('/[\s]+/', $fragment);
+                if (\array_key_exists(2, $lineData)) {
+                    $packageFiles[$lineData[5]] = $lineData[2];
+                }
             }
         }
 
