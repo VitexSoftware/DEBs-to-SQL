@@ -28,7 +28,7 @@ class Repository extends \Ease\SQL\Engine
     /**
      * @var array of packages
      */
-    public array $packages;
+    public array $packages = [];
     private $archs = [];
     private $skiplist;
     private $poolDir;
@@ -44,7 +44,7 @@ class Repository extends \Ease\SQL\Engine
         $this->myTable = 'packages';
         $this->setObjectName();
         parent::__construct();
-        $this->repoDir = \Ease\Functions::cfg('REPO_DIR');
+        $this->repoDir = \Ease\Shared::cfg('REPO_DIR');
         $this->poolDir = $this->repoDir.'pool/';
         $this->skiplist = $skiplist;
 
@@ -64,6 +64,8 @@ class Repository extends \Ease\SQL\Engine
 
                 $this->dists[$fileInfo->getFilename()] = $this->repoDir.'dists/'.$fileInfo->getFilename();
             }
+        } else {
+            $this->addStatusMessage(sprintf(_('dists not found in %s'), $this->repoDir), 'warning');
         }
     }
 
@@ -202,7 +204,7 @@ class Repository extends \Ease\SQL\Engine
             'Maintainer', 'InstalledSize', 'Depends', 'PreDepends', 'Breaks', 'Enhances', 'Replaces', 'Section', 'Priority',
             'Description', 'LongDescription', 'AutoBuiltPackage', 'Filename', 'MD5sum',
             'SHA1', 'SHA256', 'SHA512', 'Size', 'AutoBuiltPackage', 'Conflicts', 'Homepage', 'Provides', 'Recommends',
-            'Suggests', 'Exists', 'fileMtime', 'created',
+            'Suggests', 'Exists', 'fileMtime', 'created', 'Existing',
         ];
 
         foreach ($knownColumns as $column) {
@@ -338,8 +340,7 @@ class Repository extends \Ease\SQL\Engine
 
                         if (
                             \array_key_exists('Filename', $packageData) && empty($this->getColumnsFromSQL(
-                                [
-                                    'id'],
+                                ['id'],
                                 ['Filename' => $packageData['Filename']],
                             ))
                         ) {
@@ -377,12 +378,12 @@ class Repository extends \Ease\SQL\Engine
     public function updatePresenceStatus(): void
     {
         foreach ($this->getColumnsFromSQL(['id', 'Filename', 'Existing']) as $pack) {
-            $presence = file_exists($this->repoDir.'/'.$pack['Filename']);
+            $presence = file_exists($this->repoDir.'/'.$pack['Filename']) ? 1 : 0;
 
             if ($presence !== $pack['Existing']) {
                 $this->updateToSQL(['id' => $pack['id'], 'updated' => date('Y-m-d H:i:s'),
                     'Existing' => $presence]);
-                $this->addStatusMessage($pack['Filename'].' presence changed');
+                $this->addStatusMessage($pack['Filename'].' presence changed to '.($presence ? 'existing' : 'missing') );
             }
         }
     }

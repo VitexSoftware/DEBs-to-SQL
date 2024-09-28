@@ -33,11 +33,11 @@ class Packages extends \Ease\SQL\Engine
      * Column containing the date of the last modification of the record in the shop.
      */
     public string $myLastModifiedColumn = 'updated';
-    
-    public function __construct($identifier = null, $options = []) {
+
+    public function __construct($identifier = null, $options = [])
+    {
         $this->nameColumn = 'Name';
         $this->myTable = 'packages';
         parent::__construct($identifier, $options);
     }
-    
 }

@@ -58,7 +58,7 @@ class NewPackages extends \Ease\Html\SpanTag
             $properties,
         ));
 
-        $this->setTagCss(['text-align'=>'center']);
+        $this->setTagCss(['text-align' => 'center']);
     }
 
     public function readpackages(string $pkgFile): array

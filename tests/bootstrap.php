@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * This file is part of the DEB_SQL_indexer package
+ * This file is part of the DEBs-to-SQL package
  *
- * https://github.com/VitexSoftware/
+ * https://github.com/VitexSoftware/DEBs-to-SQL
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -11,9 +13,7 @@
  * file that was distributed with this source code.
  */
 
-
-
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 \define('APP_NAME', 'debs2sql');
 \Ease\Shared::init(['DB_CONNECTION',
@@ -22,4 +22,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
     'DB_DATABASE',
     'DB_USERNAME',
     'DB_PASSWORD',
-    'REPO_DIR'], __DIR__ .'/../.env');
+    'REPO_DIR'], __DIR__.'/../.env');

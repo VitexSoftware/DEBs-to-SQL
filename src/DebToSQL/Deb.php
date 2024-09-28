@@ -23,7 +23,7 @@ namespace DebToSQL;
 class Deb extends \Ease\Brick
 {
     /**
-     * Get Deb Icon Image
+     * Get Deb Icon Image.
      */
     public static function getIcon(string $package): string
     {
@@ -41,7 +41,7 @@ class Deb extends \Ease\Brick
     }
 
     /**
-     * Package Icon URL 
+     * Package Icon URL.
      */
     public static function getIconUrl(string $package): string
     {

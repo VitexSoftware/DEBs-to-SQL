@@ -22,12 +22,12 @@ namespace DebToSQL;
  */
 class Files extends \Ease\SQL\Engine
 {
-
-    public function __construct($identifier = null, $options = []) {
+    public function __construct($identifier = null, $options = [])
+    {
         $this->myTable = 'files';
         parent::__construct($identifier, $options);
-    }    
-    
+    }
+
     /**
      * @param int    $packageId
      * @param string $packagePath
@@ -49,8 +49,10 @@ class Files extends \Ease\SQL\Engine
 
         while (!feof($fp)) {
             $fragment = fgets($fp, 4096);
-            if(is_string($fragment)){
+
+            if (\is_string($fragment)) {
                 $lineData = preg_split('/[\s]+/', $fragment);
+
                 if (\array_key_exists(2, $lineData)) {
                     $packageFiles[$lineData[5]] = $lineData[2];
                 }
