@@ -12,3 +12,4 @@ composer.lock
 /debian/.debhelper/
 /tests/.phpunit.result.cache
 /.phpunit.cache/
+/.build/

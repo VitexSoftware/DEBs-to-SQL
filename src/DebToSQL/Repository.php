@@ -383,7 +383,7 @@ class Repository extends \Ease\SQL\Engine
             if ($presence !== $pack['Existing']) {
                 $this->updateToSQL(['id' => $pack['id'], 'updated' => date('Y-m-d H:i:s'),
                     'Existing' => $presence]);
-                $this->addStatusMessage($pack['Filename'].' presence changed to '.($presence ? 'existing' : 'missing') );
+                $this->addStatusMessage($pack['Filename'].' presence changed to '.($presence ? 'existing' : 'missing'));
             }
         }
     }

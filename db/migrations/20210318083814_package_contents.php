@@ -20,7 +20,7 @@ final class PackageContents extends AbstractMigration
     public function change(): void
     {
         $users = $this->table('files');
-        $users->addColumn('packages_id', 'integer')
+        $users->addColumn('packages_id', 'integer',['unsigned'=>true])
                 ->addColumn('path', 'string', ['limit' => 4084])
                 ->addColumn('size', 'integer', ['limit' => 40])
                 ->addColumn('updated', 'datetime', ['null' => true])
