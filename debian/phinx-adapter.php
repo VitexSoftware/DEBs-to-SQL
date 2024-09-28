@@ -41,8 +41,8 @@ $prefix = "/usr/lib/debs2sql/db/";
 
 $sqlOptions = [];
 
-if (strstr(\Ease\Functions::cfg('DB_CONNECTION'), 'sqlite')) {
-    $sqlOptions["database"] = "/var/lib/dbconfig-common/sqlite3/debs2sql/" . basename(\Ease\Functions::cfg("DB_DATABASE"));
+if (strstr(\Ease\Shared::cfg('DB_CONNECTION'), 'sqlite')) {
+    $sqlOptions["database"] = "/var/lib/dbconfig-common/sqlite3/debs2sql/" . basename(\Ease\Shared::cfg("DB_DATABASE"));
 }
 $engine = new \Ease\SQL\Engine(null, $sqlOptions);
 $cfg = [
@@ -54,12 +54,12 @@ $cfg = [
     [
         'default_environment' => 'development',
         'development' => [
-            'adapter' => \Ease\Functions::cfg('DB_CONNECTION'),
+            'adapter' => \Ease\Shared::cfg('DB_CONNECTION'),
             'name' => $engine->database,
             'connection' => $engine->getPdo($sqlOptions)
         ],
         'production' => [
-            'adapter' => \Ease\Functions::cfg('DB_CONNECTION'),
+            'adapter' => \Ease\Shared::cfg('DB_CONNECTION'),
             'name' => $engine->database,
             'connection' => $engine->getPdo($sqlOptions)
         ],

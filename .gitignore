@@ -13,3 +13,4 @@ composer.lock
 /tests/.phpunit.result.cache
 /.phpunit.cache/
 /.build/
+/.env

@@ -167,9 +167,9 @@ class Repository extends \Ease\SQL\Engine
 
             if (file_exists($packages)) {
                 if (
-                    !empty(\Ease\Functions::cfg('SKIP')) && strstr(
+                    !empty(\Ease\Shared::cfg('SKIP')) && strstr(
                         $packages,
-                        \Ease\Functions::cfg('SKIP'),
+                        \Ease\Shared::cfg('SKIP'),
                     )
                 ) {
                     $this->addStatusMessage('Private repo '.$packages.' skipped');
