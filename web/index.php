@@ -19,7 +19,7 @@ namespace DebToSQL;
  * VitexSoftware - DEBs to SQL web interface.
  *
  * @author     Vitex <vitex@hippy.cz>
- * @copyright  2023 Vitex@hippy.cz (G)
+ * @copyright  2023-2024 Vitex@hippy.cz (G)
  */
 require_once '../vendor/autoload.php';
 \Ease\Shared::init(['DB_CONNECTION', 'DB_HOST', 'DB_PORT', 'DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD'], '../.env');
