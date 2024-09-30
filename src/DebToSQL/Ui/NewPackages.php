@@ -190,7 +190,7 @@ class NewPackages extends \Ease\Html\SpanTag
                 'description' => $packageInfo['Description'],
                 'link' => 'package.php?package='.$packageInfo['Name'],
                 'icon' => \DebToSQL\Deb::getIcon($packageInfo['Name']),
-                'date' => $packageInfo['fileMtime'],
+                'date' => $packageInfo['updated'],
             ];
         }
 
