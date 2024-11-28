@@ -29,10 +29,10 @@ class Repository extends \Ease\SQL\Engine
      * @var array of packages
      */
     public array $packages = [];
-    private string $archs = [];
-    private $skiplist;
-    private $poolDir;
-    private $suites;
+    private array $archs = [];
+    private array $skiplist = [];
+    private string $poolDir;
+    private array $suites = [];
 
     /**
      * @var array<string> of architectures

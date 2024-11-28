@@ -12,15 +12,15 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "vitexsoftware/ease-core": "^1.12",
-        "vitexsoftware/ease-fluentpdo": "^1.0",
-        "vitexsoftware/ease-twbootstrap5": "dev-main"
+        "vitexsoftware/ease-core": "^1.45",
+        "vitexsoftware/ease-fluentpdo": "^1.4",
+        "vitexsoftware/ease-twbootstrap5": "^1.0"
     },
     "require-dev": {
         "robmorgan/phinx": "*",
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "friendsofphp/php-cs-fixer": "^3.61",
+        "friendsofphp/php-cs-fixer": "^3.65",
         "ergebnis/composer-normalize": "^2.43",
         "ergebnis/php-cs-fixer-config": "^6.34"
     },
