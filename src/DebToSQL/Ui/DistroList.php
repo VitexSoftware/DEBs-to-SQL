@@ -22,6 +22,12 @@ namespace DebToSQL\Ui;
  */
 class DistroList extends \Ease\TWB5\Table
 {
+    /**
+     * List of Distributions.
+     *
+     * @param \DebToSQL\Engine $engine
+     * @param array<string,string>      $properties
+     */
     public function __construct($engine, $properties = [])
     {
         $packagesTree = [];

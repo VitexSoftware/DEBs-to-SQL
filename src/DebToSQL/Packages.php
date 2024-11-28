@@ -34,7 +34,13 @@ class Packages extends \Ease\SQL\Engine
      */
     public string $myLastModifiedColumn = 'updated';
 
-    public function __construct($identifier = null, $options = [])
+    /**
+     * Packages handler
+     * 
+     * @param int|string $identifier
+     * @param array<string,string> $options
+     */
+    public function __construct($identifier = null, array $options = [])
     {
         $this->nameColumn = 'Name';
         $this->myTable = 'packages';

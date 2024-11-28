@@ -22,23 +22,28 @@ namespace DebToSQL;
  */
 class Repository extends \Ease\SQL\Engine
 {
-    public $dists = [];
-    public $repoDir = '';
+    public array $dists = [];
+    public string $repoDir = '';
 
     /**
      * @var array of packages
      */
     public array $packages = [];
-    private $archs = [];
+    private string $archs = [];
     private $skiplist;
     private $poolDir;
     private $suites;
 
     /**
-     * @var array of architectures
+     * @var array<string> of architectures
      */
     private array $arch = [];
 
+    /**
+     * Repository handler
+     *
+     * @param array<string> $skiplist
+     */
     public function __construct(array $skiplist = []) /* : \DirectoryIterator */
     {
         $this->myTable = 'packages';
@@ -88,7 +93,7 @@ class Repository extends \Ease\SQL\Engine
      *
      * @return array list of architectures found
      */
-    public function parseDist($distName)
+    public function parseDist(string $distName): array
     {
         $this->addStatusMessage(_('Parsing distro').': '.$distName);
         $suites = $this->parseSuites($distName);
@@ -108,9 +113,9 @@ class Repository extends \Ease\SQL\Engine
      *
      * @param string $distName
      *
-     * @return array
+     * @return array<string> list of suites found
      */
-    public function parseSuites($distName)
+    public function parseSuites(string $distName): array
     {
         foreach (new \DirectoryIterator($this->dists[$distName]) as $fileInfo) {
             if ($fileInfo->isDot()) {
@@ -225,11 +230,11 @@ class Repository extends \Ease\SQL\Engine
     }
 
     /**
-     * @param type $pkgFile
+     * @param string $pkgFile
      *
-     * @return type
+     * @return array<string, array<string, bool|int|string|null>>
      */
-    public function readpackages($pkgFile)
+    public function readpackages(string $pkgFile): array
     {
         $packages = [];
         $pName = null;
@@ -291,7 +296,7 @@ class Repository extends \Ease\SQL\Engine
                         $fpparts = explode('/', $value);
                         $distro = $fpparts[1];
                         $section = $fpparts[2];
-                        $origFile = $this->poolDir.'/'.$distro.'/'.($section === 'main') ? '' : $section.'/'.$pName;
+                        $origFile = $this->poolDir.'/'.$distro.'/'.($section === 'main' ? '' : $section).'/'.$pName;
                         $packages[$pName]['fileMtime'] = file_exists($origFile) ? filemtime($origFile) : null;
                         $packages[$pName]['Existing'] = file_exists($origFile) ? 1 : 0;
 
@@ -389,9 +394,9 @@ class Repository extends \Ease\SQL\Engine
     }
 
     /**
-     * @param array $packageData
+     * @param array<string,string> $packageData
      */
-    public function indexPackageContents($packageData): void
+    public function indexPackageContents(array $packageData): void
     {
         $contentor = new Files();
         $contentor->indexPackageContents(

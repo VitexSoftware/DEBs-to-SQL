@@ -22,7 +22,13 @@ namespace DebToSQL;
  */
 class Files extends \Ease\SQL\Engine
 {
-    public function __construct($identifier = null, $options = [])
+    /**
+     * Files table handler.
+     *
+     * @param mixed $identifier
+     * @param array<string,mixed> $options
+     */
+    public function __construct($identifier = null, array $options = [])
     {
         $this->myTable = 'files';
         parent::__construct($identifier, $options);
@@ -32,7 +38,7 @@ class Files extends \Ease\SQL\Engine
      * @param int    $packageId
      * @param string $packagePath
      */
-    public function indexPackageContents($packageId, $packagePath): void
+    public function indexPackageContents($packageId, string $packagePath): void
     {
         foreach (self::getPackageContents($packagePath) as $path => $size) {
             $this->insertToSQL(['packages_id' => $packageId, 'path' => $path, 'size' => $size]);
@@ -41,6 +47,9 @@ class Files extends \Ease\SQL\Engine
 
     /**
      * Obtaining package contents.
+     *
+     * @param string $debFile
+     * @return array<string,string>
      */
     public static function getPackageContents(string $debFile): array
     {
