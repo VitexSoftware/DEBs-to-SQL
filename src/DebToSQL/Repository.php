@@ -40,7 +40,7 @@ class Repository extends \Ease\SQL\Engine
     private array $arch = [];
 
     /**
-     * Repository handler
+     * Repository handler.
      *
      * @param array<string> $skiplist
      */
@@ -89,8 +89,6 @@ class Repository extends \Ease\SQL\Engine
     /**
      * Search for Suites in Distribution.
      *
-     * @param string $distName
-     *
      * @return array list of architectures found
      */
     public function parseDist(string $distName): array
@@ -110,8 +108,6 @@ class Repository extends \Ease\SQL\Engine
 
     /**
      * Parse suites in given Distribution.
-     *
-     * @param string $distName
      *
      * @return array<string> list of suites found
      */
@@ -230,9 +226,7 @@ class Repository extends \Ease\SQL\Engine
     }
 
     /**
-     * @param string $pkgFile
-     *
-     * @return array<string, array<string, bool|int|string|null>>
+     * @return array<string, array<string, null|bool|int|string>>
      */
     public function readpackages(string $pkgFile): array
     {
@@ -394,7 +388,7 @@ class Repository extends \Ease\SQL\Engine
     }
 
     /**
-     * @param array<string,string> $packageData
+     * @param array<string, string> $packageData
      */
     public function indexPackageContents(array $packageData): void
     {

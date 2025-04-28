@@ -9,7 +9,7 @@ Homepage: https://github.com/VitexSoftware/DEBs-to-SQL
 Package: debs2sql
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${shlibs:Depends}, php-vitexsoftware-ease-fluentpdo, php-robmorgan-phinx|php-cakephp-phinx, php-vitexsoftware-ease-html
+Depends: ${misc:Depends}, ${shlibs:Depends}, php-vitexsoftware-ease-fluentpdo, php-robmorgan-phinx|php-cakephp-phinx, php-vitexsoftware-ease-html, php-league-commonmark
 Description: Index Debian package repository into SQL
  Easy way how to index your Debian repository into SQL database. 
  All PHP-pdo databases supported.

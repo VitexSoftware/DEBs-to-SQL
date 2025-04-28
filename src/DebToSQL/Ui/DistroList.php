@@ -25,8 +25,8 @@ class DistroList extends \Ease\TWB5\Table
     /**
      * List of Distributions.
      *
-     * @param \DebToSQL\Engine $engine
-     * @param array<string,string>      $properties
+     * @param \DebToSQL\Engine      $engine
+     * @param array<string, string> $properties
      */
     public function __construct($engine, $properties = [])
     {
@@ -47,7 +47,7 @@ class DistroList extends \Ease\TWB5\Table
                         [
                             'distro' => $distroName,
                             'suite' => $suite,
-                            'package' => $package,
+                            'package' => new \Ease\Html\ATag('package.php?package='.$package, $package),
                         ],
                     );
                 }

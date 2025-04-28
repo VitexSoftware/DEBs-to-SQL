@@ -35,10 +35,10 @@ class Packages extends \Ease\SQL\Engine
     public string $myLastModifiedColumn = 'updated';
 
     /**
-     * Packages handler
-     * 
-     * @param int|string $identifier
-     * @param array<string,string> $options
+     * Packages handler.
+     *
+     * @param int|string            $identifier
+     * @param array<string, string> $options
      */
     public function __construct($identifier = null, array $options = [])
     {

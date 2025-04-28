@@ -17,4 +17,7 @@ override_dh_install:
 	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/debs2sql/g' debian/debs2sql/usr/*/debs2sql/*.php
 	sed -i -e 's/\.\.\/.env/\/etc\/debs2sql\/\.env/g'  debian/debs2sql/usr/*/debs2sql/*.php
 #	sed -i -e 's/..\/i18n/\/usr\/share\/locale/g'      debian/debs2sql/usr/*/debs2sql/*.php
+	sed -i "26i require_once '/usr/share/php/League/CommonMark/autoload.php';" debian/debs2sql/usr/share/debs2sql/package.php
+
+
 

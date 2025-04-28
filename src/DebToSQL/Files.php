@@ -25,8 +25,8 @@ class Files extends \Ease\SQL\Engine
     /**
      * Files table handler.
      *
-     * @param mixed $identifier
-     * @param array<string,mixed> $options
+     * @param mixed                $identifier
+     * @param array<string, mixed> $options
      */
     public function __construct($identifier = null, array $options = [])
     {
@@ -35,8 +35,7 @@ class Files extends \Ease\SQL\Engine
     }
 
     /**
-     * @param int    $packageId
-     * @param string $packagePath
+     * @param int $packageId
      */
     public function indexPackageContents($packageId, string $packagePath): void
     {
@@ -48,8 +47,7 @@ class Files extends \Ease\SQL\Engine
     /**
      * Obtaining package contents.
      *
-     * @param string $debFile
-     * @return array<string,string>
+     * @return array<string, string>
      */
     public static function getPackageContents(string $debFile): array
     {

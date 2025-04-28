@@ -1,8 +1,14 @@
-debs2sql (1.0.0) UNRELEASED; urgency=medium
+debs2sql (1.1.0) UNRELEASED; urgency=medium
+
+  * Package info page added
+
+ -- vitex <info@vitexsoftware.cz>  Mon, 28 Apr 2025 16:48:36 +0200
+
+debs2sql (1.0.0) unstable; urgency=medium
 
   * stable release
 
- -- vitex <info@vitexsoftware.cz>  Thu, 28 Nov 2024 10:09:52 +0100
+ -- vitex <info@vitexsoftware.cz>  Mon, 28 Apr 2025 16:48:24 +0200
 
 debs2sql (0.5.0) unstable; urgency=medium
 
