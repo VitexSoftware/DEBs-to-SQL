@@ -21,7 +21,7 @@
         "robmorgan/phinx": "*",
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "friendsofphp/php-cs-fixer": "^3.65",
+        "friendsofphp/php-cs-fixer": "^3.85",
         "ergebnis/composer-normalize": "^2.47",
         "ergebnis/php-cs-fixer-config": "^6.51"
     },
