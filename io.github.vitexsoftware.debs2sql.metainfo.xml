@@ -10,12 +10,11 @@
   
   <description>
     <p>
-      Easy way how to index your Debian repository into SQL database.  All PHP-pdo databases supported.
+      Easy way how to index your Debian repository into SQL database. All PHP-pdo databases supported.
     </p>
   </description>
   
   <icon type="stock">debs2sql</icon>
-  
   <categories>
     <category>Utility</category>
     <category>FileTools</category>
