@@ -6,15 +6,28 @@
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh $@
+	dh $@ --with phpcomposer
+
+override_dh_auto_build:
+	# Generate Debian autoloader for debs2sql
+	cat > debian/autoload.php <<'AUTOLOADER'
+<?php
+// Debian autoloader for debs2sql
+// Load dependency autoloaders
+require_once '/usr/share/php/Ease/autoload.php';
+require_once '/usr/share/php/Envms/FluentPDO/autoload.php';
+require_once '/usr/share/php/EaseTWB5/autoload.php';
+require_once '/usr/share/php/League/CommonMark/autoload.php';
+AUTOLOADER
 
 #override_dh_auto_install:
 #       dh_auto_install -- prefix=/usr
 
 override_dh_install:
 	dh_install
+	install -D -m 0644 debian/autoload.php debian/debs2sql/usr/share/php/debs2sql/autoload.php
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/conf/composer.json |sponge debian/conf/composer.json
-	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/debs2sql/g' debian/debs2sql/usr/*/debs2sql/*.php
+	sed -i -e 's/..\/..\/vendor/\/usr\/share\/php\/debs2sql/g' debian/debs2sql/usr/*/debs2sql/*.php
 	sed -i -e 's/\.\.\/.env/\/etc\/debs2sql\/\.env/g'  debian/debs2sql/usr/*/debs2sql/*.php
 #	sed -i -e 's/..\/i18n/\/usr\/share\/locale/g'      debian/debs2sql/usr/*/debs2sql/*.php
 	sed -i "26i require_once '/usr/share/php/League/CommonMark/autoload.php';" debian/debs2sql/usr/share/debs2sql/package.php

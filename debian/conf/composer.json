@@ -22,9 +22,6 @@
       "DebToSQL\\": "./DebToSQL/"
     }
   },
-  "config": {
-    "vendor-dir": "/var/lib/composer/debs2sql"
-  },
   "repositories": [
     {
       "type": "path",
