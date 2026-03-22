@@ -1,8 +1,14 @@
-debs2sql (1.1.0) UNRELEASED; urgency=medium
+debs2sql (1.1.1) UNRELEASED; urgency=medium
+
+  * native debian autoloading used
+
+ -- vitex <info@vitexsoftware.cz>  Sun, 22 Mar 2026 16:34:25 +0100
+
+debs2sql (1.1.0) unstable; urgency=medium
 
   * Package info page added
 
- -- vitex <info@vitexsoftware.cz>  Mon, 28 Apr 2025 16:48:36 +0200
+ -- vitex <info@vitexsoftware.cz>  Sun, 22 Mar 2026 16:34:12 +0100
 
 debs2sql (1.0.0) unstable; urgency=medium
 
