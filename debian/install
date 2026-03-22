@@ -1,7 +1,6 @@
 src/*.php                                 usr/lib/debs2sql
 db/migrations/*				  usr/lib/debs2sql/db/migrations
 #db/seeds/*				  usr/lib/debs2sql/db/seeds
-debian/conf/composer.json                 usr/lib/debs2sql
 debian/conf/.env                          etc/debs2sql
 debian/phinx-adapter.php	          usr/lib/debs2sql
 src/DebToSQL/*.php                        usr/lib/debs2sql/DebToSQL/

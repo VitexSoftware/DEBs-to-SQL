@@ -2,17 +2,16 @@ Source: debs2sql
 Section: unknown
 Priority: optional
 Maintainer: CyberVitexus <info@vitexsoftware.cz>
-Build-Depends: debhelper (>=11~),moreutils
+Build-Depends: debhelper-compat (= 13), pkg-php-tools, moreutils
 Standards-Version: 4.1.4
 Homepage: https://github.com/VitexSoftware/DEBs-to-SQL
 
 Package: debs2sql
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, 
- php-vitexsoftware-ease-fluentpdo, 
+Depends: ${misc:Depends},
+ ${phpcomposer:Debian-require},
  php-robmorgan-phinx|php-cakephp-phinx,
- php-vitexsoftware-ease-html,
  php-league-commonmark,
  php-vitexsoftware-ease-bootstrap5
 Description: Index Debian package repository into SQL
