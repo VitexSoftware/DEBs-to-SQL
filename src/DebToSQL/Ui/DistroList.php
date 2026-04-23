@@ -43,13 +43,11 @@ class DistroList extends \Ease\TWB5\Table
         foreach ($packagesTree as $distroName => $suites) {
             foreach ($suites as $suite => $packages) {
                 foreach ($packages as $package => $id) {
-                    $this->addRowColumns(
-                        [
-                            'distro' => $distroName,
-                            'suite' => $suite,
-                            'package' => new \Ease\Html\ATag('package.php?package='.$package, $package),
-                        ],
-                    );
+                    $this->addRowColumns([
+                        'distro' => $distroName,
+                        'suite' => $suite,
+                        'package' => new \Ease\Html\ATag('package.php?package='.$package, $package),
+                    ],);
                 }
             }
         }
