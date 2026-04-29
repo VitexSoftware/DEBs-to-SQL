@@ -20,7 +20,7 @@ override_dh_install:
 	sed -i -e 's/..\/vendor/\/usr\/share\/php\/debs2sql/g' debian/debs2sql/usr/*/debs2sql/*.php
 	sed -i -e 's/\.\.\/.env/\/etc\/debs2sql\/\.env/g'  debian/debs2sql/usr/*/debs2sql/*.php
 #	sed -i -e 's/..\/i18n/\/usr\/share\/locale/g'      debian/debs2sql/usr/*/debs2sql/*.php
-	sed -i "s|: 'unknown'|: '$(PKG_SOURCE)'|" \
+	sed -i "s|'unknown'|'$(PKG_SOURCE)'|" \
 		debian/debs2sql/usr/share/php/debs2sql/autoload.php
-	sed -i "s|: '0.0.0'|: '$(PKG_VERSION)'|" \
+	sed -i "s|'0.0.0'|'$(PKG_VERSION)'|" \
 		debian/debs2sql/usr/share/php/debs2sql/autoload.php
