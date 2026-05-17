@@ -19,6 +19,7 @@
   <developer id="cz.vitexsoftware">
     <name>VitexSoftware</name>
   </developer>
+  <icon type="stock">debs2sql</icon>
   <provides>
     <binary>debs2sql</binary>
   </provides>
