@@ -59,3 +59,15 @@ to index all new packages into database
 
 
 ![Results](result.png?raw=true)
+
+
+AppStream
+---------
+
+The package ships AppStream metadata (`io.github.vitexsoftware.debs2sql.metainfo.xml`)
+and a scalable stock icon (`debs2sql`) installed to the hicolor icon theme:
+
+```
+/usr/share/icons/hicolor/scalable/apps/debs2sql.svg
+/usr/share/metainfo/io.github.vitexsoftware.debs2sql.metainfo.xml
+```
