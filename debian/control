@@ -11,7 +11,7 @@ Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends},
  ${phpcomposer:Debian-require},
- php-robmorgan-phinx|php-cakephp-phinx,
+ php-cakephp-phinx,
  php-league-commonmark,
  php-vitexsoftware-ease-bootstrap5
 Description: Index Debian package repository into SQL
