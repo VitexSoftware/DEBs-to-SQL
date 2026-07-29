@@ -1,4 +1,8 @@
 # DEBs-to-SQL
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
+
 SQL Database of debian packages and its contents indexer
 
 ![Project Logo](debs2sql.svg?raw=true)
