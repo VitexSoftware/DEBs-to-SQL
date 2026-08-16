@@ -4,13 +4,17 @@
   
   <name>Debian Repo to SQL</name>
   <summary>ndex Debian package repository into SQL database</summary>
-  
+  <summary xml:lang="cs">Indexace repozitáře balíčků Debian do SQL databáze</summary>
+
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
-  
+
   <description>
     <p>
       Easy way how to index your Debian repository into SQL database. All PHP-pdo databases supported.
+    </p>
+    <p xml:lang="cs">
+      Snadný způsob, jak zaindexovat váš Debian repozitář do SQL databáze. Podporovány jsou všechny databáze přes PHP-PDO.
     </p>
   </description>
   
