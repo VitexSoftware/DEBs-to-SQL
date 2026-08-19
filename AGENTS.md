@@ -1,4 +1,4 @@
-# WARP.md - Working AI Reference for DEBs-to-SQL
+# AGENTS.md - Working AI Reference for DEBs-to-SQL
 
 ## Project Overview
 **Type**: PHP Project/Debian Package
