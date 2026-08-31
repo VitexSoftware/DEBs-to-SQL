@@ -1,6 +1,8 @@
 #!groovy
 
-String[] distributions = ['debian:bookworm', 'debian:trixie', 'ubuntu:jammy', 'ubuntu:noble', 'ubuntu:resolute']
+// ubuntu:jammy excluded: php-league-commonmark (>= 2.7) requires php-league-config, which is
+// not packaged for jammy anywhere (Ubuntu universe or repo.vitexsoftware.com).
+String[] distributions = ['debian:bookworm', 'debian:trixie', 'ubuntu:noble', 'ubuntu:resolute']
 
 String vendor = 'vitexsoftware'
 String imagePrefix = 'multiflexi-'

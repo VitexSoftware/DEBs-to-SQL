@@ -8,7 +8,10 @@ String[] distributions = [
 			// 'debian:forky', // Disabled: Forky is still unstable/research-only.
 			//                 // The full Debian package ecosystem is not yet available for Forky.
 			//                 // Re-enable once the stack builds cleanly for Forky.
-			'ubuntu:jammy', 
+			// 'ubuntu:jammy', // Disabled: php-league-commonmark (>= 2.7) requires php-league-config,
+			//                 // which is not packaged for jammy anywhere (Ubuntu universe or
+			//                 // repo.vitexsoftware.com). Re-enable once php-league-config is
+			//                 // packaged and published for jammy.
 			'ubuntu:noble',
 			'ubuntu:resolute',
 ]

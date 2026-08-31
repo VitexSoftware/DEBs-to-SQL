@@ -13,7 +13,8 @@ Depends: ${misc:Depends},
  ${phpcomposer:Debian-require},
  php-cakephp-phinx,
  php-league-commonmark,
- php-vitexsoftware-ease-bootstrap5
+ php-symfony-deprecation-contracts,
+ php-vitexsoftware-ease-twbootstrap5
 Description: Index Debian package repository into SQL
  Easy way how to index your Debian repository into SQL database. 
  All PHP-pdo databases supported.
