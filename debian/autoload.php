@@ -10,6 +10,11 @@ require_once '/usr/share/php/Ease/autoload.php';
 require_once '/usr/share/php/EaseFluentPDO/autoload.php';
 require_once '/usr/share/php/EaseTWB5/autoload.php';
 require_once '/usr/share/php/League/CommonMark/autoload.php';
+// League\CommonMark 2.x calls trigger_deprecation() which lives in a files-autoload
+// that the Debian class autoloader does not pull in; load it explicitly.
+if (file_exists('/usr/share/php/Symfony/Contracts/Deprecation/function.php')) {
+    require_once '/usr/share/php/Symfony/Contracts/Deprecation/function.php';
+}
 
 /**
  * Autoloader for DebToSQL namespace

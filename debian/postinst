@@ -4,7 +4,14 @@ set -e
 
 case "$1" in
     configure)
-        echo "edit /etc/debs2sql/.env and run debs2sql-phinx to prepare database";
+        if [ -r /etc/debs2sql/.env ]; then
+            echo "debs2sql: applying database migrations via debs2sql-phinx"
+            if ! debs2sql-phinx; then
+                echo "debs2sql: WARNING: debs2sql-phinx failed - edit /etc/debs2sql/.env and run debs2sql-phinx manually" >&2
+            fi
+        else
+            echo "edit /etc/debs2sql/.env and run debs2sql-phinx to prepare database";
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -15,8 +22,6 @@ case "$1" in
         exit 1
     ;;
 esac
-
-echo TIP: run debs2sql-phinx
 
 #DEBHELPER#
 

@@ -1,8 +1,12 @@
-debs2sql (1.1.1) UNRELEASED; urgency=medium
+debs2sql (1.1.1) unstable; urgency=medium
 
   * native debian autoloading used
+  * fix: load Symfony deprecation-contracts function so League\CommonMark works
+  * fix: set EASE_APPNAME to avoid PHP 8.4 empty gettext domain fatal in web UI
+  * fix: widen packages.Suggests column to text to avoid truncation errors
+  * postinst now runs debs2sql-phinx automatically on configure
 
- -- vitex <info@vitexsoftware.cz>  Sun, 22 Mar 2026 16:34:25 +0100
+ -- vitex <info@vitexsoftware.cz>  Tue, 08 Sep 2026 17:55:34 +0200
 
 debs2sql (1.1.0) unstable; urgency=medium
 
